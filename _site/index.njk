@@ -2,7 +2,7 @@
 layout: layouts/default.njk
 ---
 
-<ul class="group mx-auto max-w-2xl h-96 flex justify-center gap-2 max-md:(h-auto flex-col gap-12)">
+<ul class="group mx-auto max-w-2xl h-96 flex justify-center gap-2 max-md:(h-auto grid grid-cols-2 gap-5)">
   {%- for goblin in collections.goblins %}
     <li class="group/goblin
       relative
@@ -30,10 +30,9 @@ layout: layouts/default.njk
       md:group-focus-within:[&:not(:focus-within):not(:hover)]:after:opacity-100
       after:absolute
       after:inset-0
-      after:bg-sec-400/30
+      after:bg-zinc-900/50
       after:backdrop-blur
       after:transition-all
-      focus-within:(outline-(& 2 sec-300 offset-2))
     ">
       <a href="{{ goblin.url }}" class="absolute inset-0 text-white z-10">
         <span class="absolute
@@ -62,3 +61,44 @@ layout: layouts/default.njk
     </li>
   {%- endfor %}
 </ul>
+
+
+<p class="pt-12 flex justify-center">
+  <a href="/albums/" class="
+    px-5
+    py-1
+    text-2xl
+    font-goblin
+    inline-flex
+    items-center
+    justify-center
+    gap-2
+    relative
+    overflow-hidden
+    rounded-full
+    ring-(1 inset white/25)
+    shadow-lg
+    before:(
+      w-full
+      aspect-square
+      bg-[linear-gradient(90deg,_theme(colors.sec.900/0)_0%,_theme(colors.sec.900)_35%,_theme(colors.sec.200)_50%,_theme(colors.sec.900)_65%,_theme(colors.sec.900/0)_100%)]
+      content-['']
+      absolute
+      z-[-1]
+      animate-[spin_3s_linear_infinite]
+    )
+    after:(
+      content-['']
+      bg-(pri-800 gradient-to-b)
+      from-white/25
+      to-black/25
+      absolute
+      inset-px
+      z-[-1]
+      rounded-[inherit]
+      transition
+    )
+    transition
+    hover:(text-sec-400 after:(bg-pri-900))
+  ">Albums</a>
+</p>

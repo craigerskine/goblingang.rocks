@@ -70,6 +70,7 @@ injectGlobal`
   @layer base {
     /* .some-selector,#some-selector { @apply text-wrap-balance; } */
     [x-cloak] { @apply hidden; }
+    .link { @apply text-sec-600 transition hover:(text-sec-300 underline); }
     .tippy-box[data-state="hidden"] { @apply opacity-0 translate-y-1; }
     [data-tippy-root] { @apply max-w-[calc(100vw-10px)]; }
     .tippy-box { @apply bg-black text-(white/80 xs) font-semibold relative outline-0 opacity-100 rounded translate-y-0 motion-safe:(transition duration-75); }
