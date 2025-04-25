@@ -53,6 +53,21 @@ export default function (eleventyConfig) {
     return markdownLibrary.render(content);
   });
 
+  eleventyConfig.addFilter('dateFormat', (value, format = 'YYYY') => {
+    const date = new Date(value);
+    if (isNaN(date)) return '';
+
+    const map = {
+      YYYY: date.getFullYear(),
+      MM: String(date.getMonth() + 1).padStart(2, '0'),
+      M: date.getMonth() + 1,
+      DD: String(date.getDate()).padStart(2, '0'),
+      D: date.getDate()
+    };
+
+    return format.replace(/YYYY|MM|M|DD|D/g, match => map[match]);
+  });
+
   // cssmin
   /*
     {%- set css -%}

@@ -1,0 +1,8 @@
+{
+  "layout": "layouts/album.njk",
+  "tags": ["albums"],
+  "permalink": false,
+  "eleventyComputed": {
+    "subtitle": "{{ date }}"
+  }
+}
