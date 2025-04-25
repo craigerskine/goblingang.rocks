@@ -6,11 +6,11 @@ tracks:
   - Fungus Brew Blues
   - Snaggle's Curse
   - Bloodroot Lullaby
-  - Klockpunchor’s Lament
+  - Klokpunchr's Lament
   - Teeth in the Tunnels
   - Hymn to the Great Rolling One
   - Echoes in the Mold
-  - Stringbreaker’s Prayer
+  - Stringbreaker's Prayer
   - Blight Waltz
   - Shriek of the Hollow King
   - Last Strike Before Dawn (bonus track)
