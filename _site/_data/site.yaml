@@ -1,0 +1,11 @@
+meta:
+  title: Goblin Gang
+  description: Coming for the woke
+  url: https://goblingang-music.netlify.app/
+  author: Craig Erskine
+  author_url: https://craigerskine.com
+
+analytics: |-
+  // google analytics
+  // window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+  // ga('create', 'UA-XXXXXXX-X', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
