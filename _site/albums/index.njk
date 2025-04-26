@@ -6,9 +6,10 @@ date: 2025-04-25
 ---
 
 {%- from 'macro.btn.njk' import btn -%}
-<ul class="list-none grid-(& cols-2) items-center gap-12 md:(grid-cols-3)">
+<ul class="mx-auto max-w-xs grid-(& cols-1) items-center gap-12 md:(max-w-none grid-cols-3)">
+
   {%- for album in collections.albums %}
-    <li class="col-start-2">
+    <li class="md:col-start-2">
       <figure>
         <img src="/_assets/img/album-{{ album.data.title | slugify }}.jpg" alt="{{ album.data.title }} cover" class="rounded-lg" />
         <figcaption class="py-3 text-lg flex items-center justify-between gap-2">
