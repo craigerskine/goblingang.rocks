@@ -6,14 +6,15 @@ date: 2025-04-25
 ---
 
 {%- from 'macro.btn.njk' import btn -%}
+
 <ul class="mx-auto max-w-xs grid-(& cols-1) items-center gap-12 md:(max-w-none grid-cols-3)">
 
   {%- for album in collections.albums %}
     <li class="md:col-start-2">
-      <figure>
+      <figure class="mb-12 relative before:(content-[''] bg-gradient-to-br from-white/25 via-transparent absolute inset-0 rounded-lg) after:(content-[''] border-(1 white/25) absolute inset-0 rounded-lg)">
         <img src="/_assets/img/album-{{ album.data.title | slugify }}.jpg" alt="{{ album.data.title }} cover" class="rounded-lg" />
-        <figcaption class="py-3 text-lg flex items-center justify-between gap-2">
-          <b>{{ album.data.title }}</b>
+        <figcaption class="py-3 text-lg flex items-center justify-between gap-2 absolute top-full inset-x-0">
+          <i>{{ album.data.title }}</i>
           <small class="text-pri-700">{{ date | dateFormat('YYYY') }}</small>
         </figcaption>
       </figure>
