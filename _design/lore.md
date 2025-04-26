@@ -13,9 +13,9 @@ A devout follower of The Great Rolling One, Blorbo believes every strike is a di
 
 Snagglevox’s voice cracked open a cave ceiling at age 7. His guitar strings snap constantly — some say from his unhinged energy, others claim he bites them mid-solo. He writes lyrics in bloodroot ink and considers chaos a musical note.
 
-## 🎸 Riffrot
+## 🎸 Qranock
 
-Legend says his guitar is strung with goblin sinew. It wails when hungry. No one knows where Riffrot came from—some say he emerged from a collapsed mine, others swear he was carved from a cursed tree by lightning. His guitar, Wretchmaw, is strung with goblin sinew and sealed with bone sap. It doesn’t just scream—it hungers. Between solos, Riffrot feeds it scraps of broken strings and beetle shells. If he doesn’t, it starts to hum... and not in tune.
+Legend says his guitar is strung with ork sinew. He learned to carve sound from stone long before he touched a guitar. Obsessed with forgotten frequencies and ancient tech, he built his first instrument from cracked relics and vibrating boneplates.
 
 ## 📋 Klokpunchr
 
