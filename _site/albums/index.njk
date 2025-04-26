@@ -7,10 +7,10 @@ date: 2025-04-25
 
 <ul class="list-none grid-(& cols-2) items-center gap-12 md:(grid-cols-3)">
   {%- for album in collections.albums %}
-    <li>
+    <li class="col-start-2">
       <figure>
         <img src="/_assets/img/album-{{ album.data.title | slugify }}.jpg" alt="{{ album.data.title }} cover" class="rounded-lg" />
-        <figcaption class="py-2 text-lg flex items-center justify-between gap-2">
+        <figcaption class="py-3 text-lg flex items-center justify-between gap-2">
           <b>{{ album.data.title }}</b>
           <small class="text-pri-700">{{ date | dateFormat('YYYY') }}</small>
         </figcaption>
