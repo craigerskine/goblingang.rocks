@@ -1,11 +1,17 @@
 ---
 layout: layouts/default.njk
 ---
-
-<figure class="mx-auto max-w-xs relative">
-  <img src="/_assets/img/goblin-{{ title | slugify }}.jpg" alt="{{ title }} photo" class="rounded-xl" />
+{%- from 'macro.btn.njk' import btn -%}
+<figure class="mx-auto w-full h-96 max-w-xs relative">
+  <img src="/_assets/img/goblin-{{ title | slugify }}.jpg" alt="{{ title }} photo" class="w-full h-full object-(cover top) rounded-xl" />
   <figcaption class="p-5 bg-gradient-to-t from-black/75 absolute inset-x-0 bottom-0">
     {{ desc }}
   </figcaption>
 </figure>
-<p class="pt-5 text-3xl flex justify-center"><a href="/" class="link" aria-label="Back home"><iconify-icon icon="mdi:arrow-left-circle-outline" class="block"></iconify-icon></a></p>
+<p class="pt-5 text-3xl flex justify-center">
+{{ btn({
+    title: 'Back',
+    ico: 'mdi:arrow-left-circle-outline',
+    url: '/'
+  }) }}
+</p>

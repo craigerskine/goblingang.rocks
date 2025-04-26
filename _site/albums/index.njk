@@ -5,6 +5,7 @@ subtitle: Listener BEWARE
 date: 2025-04-25
 ---
 
+{%- from 'macro.btn.njk' import btn -%}
 <ul class="list-none grid-(& cols-2) items-center gap-12 md:(grid-cols-3)">
   {%- for album in collections.albums %}
     <li class="col-start-2">
@@ -18,4 +19,10 @@ date: 2025-04-25
     </li>
   {%- endfor %}
 </ul>
-<p class="pt-5 text-3xl flex justify-center"><a href="/" class="link" aria-label="Back home"><iconify-icon icon="mdi:arrow-left-circle-outline" class="block"></iconify-icon></a></p>
+<p class="pt-5 text-3xl flex justify-center">
+  {{ btn({
+    title: 'Back',
+    ico: 'mdi:arrow-left-circle-outline',
+    url: '/'
+  }) }}
+</p>
