@@ -45,11 +45,11 @@ install({
         rose: { 950: '#4C0519' },
       }),
       fontFamily: ({ theme }) => ({
-        goblin: ['Grenze Gotisch', ...theme('fontFamily.sans')],
+        goblin: ['Pirata One', ...theme('fontFamily.sans')],
       }),
       keyframes: {
         'gradient': {
-          'to': { 'background-position': '200% center' },
+          'to': { 'background-position': '-200% center' },
         }
       },
       animation: {

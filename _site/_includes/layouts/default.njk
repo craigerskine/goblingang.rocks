@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/x-icon" href="{{ '/' | url }}favicon.ico" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link onload="this.onload=null;this.rel='stylesheet'" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@100..900&display=swap" />
+    <link onload="this.onload=null;this.rel='stylesheet'" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" />
     <meta property="og:title" content="{{ page_title }}" />
     <meta property="og:description" content="{{ site.meta.description }}" />
     <meta property="og:type" content="website" />
@@ -30,10 +30,10 @@
           <h1 class="
             animate-gradient
             bg-[length:200%_auto]
-            inline
             bg-(clip-text [linear-gradient(to_right,theme(colors.pri.300),theme(colors.pri.500),theme(colors.lime.500),theme(colors.pri.300))])
             text-(transparent 5xl)
-            font-(goblin semibold)
+            font-goblin
+            rotate-2
             md:(text-[8rem] tracking-tight)
           ">
             {{ title if title else site.meta.title }}
