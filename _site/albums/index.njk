@@ -30,7 +30,7 @@ date: 2025-04-25
         </figure>
       </a>
       {%- set dialogTitle = album.data.title -%}
-      {%- set dialogTracks -%}<ul class="list-none divide-(y dashed zinc-500/20) [&>li]:(py-2 flex items-center justify-between)">{% for item in album.data.tracks %}<li>{{ item.title }} <small class="text-xs opacity-70">{{ item.time }}</small></li>{% endfor %}</ul>{%- endset -%}
+      {%- set dialogTracks -%}<ol class="list-decimal pl-5 [&>li]:(py-2.5 pl-1 [&::marker]:(text-white/50 [font-variant-numeric:tabular-nums]))">{% for item in album.data.tracks %}<li><div class="flex items-center justify-between gap-4">{{ item.title }} <small class="text-xs opacity-70">{{ item.time }}</div></small></li>{% endfor %}</ol>{%- endset -%}
     </li>
   {%- endfor %}
 </ul>
