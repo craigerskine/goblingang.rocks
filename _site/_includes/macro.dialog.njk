@@ -32,7 +32,7 @@ opacity-0
 motion-safe:(transition-all)
 [&[open]]:(pointer-events-auto visible opacity-100)
 [&[open]_.dialog-box]:(translate-y-0 scale-100)
-[&::backdrop]:(bg-black/40 dark:(bg-black/70))
+[&::backdrop]:(bg-black/70 backdrop-blur-sm)
 {%- endset -%}
 
 {%- set action -%}{{ param.action if param.action else 'Close' }}{%- endset -%}

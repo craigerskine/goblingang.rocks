@@ -5,22 +5,32 @@ subtitle: Listener BEWARE
 date: 2025-04-25
 ---
 
+{#-
+  ⚠️⚠️⚠️⚠️
+  TODO: alpine dispatch data to modal
+-#}
+
 {%- from 'macro.btn.njk' import btn -%}
 {%- from 'macro.dialog.njk' import dialog -%}
+
+{%- set dialogTitle = '' -%}
+{%- set dialogTracks = '' -%}
 
 <ul class="mx-auto max-w-xs grid-(& cols-1) items-center gap-12 md:(max-w-none grid-cols-3)">
 
   {%- for album in collections.albums %}
-    <li class="md:col-start-2">
+    <li class="md:col-start-2" x-data='{ tracks: {{ album.data.tracks }} }'>
       <a @click.prevent="$refs.tracks.showModal()" href="#" class="group block focus-visible:(outline-none)">
         <figure class="mb-12 relative before:(content-[''] bg-gradient-to-br from-white/25 via-transparent absolute inset-0 rounded-lg) after:(content-[''] border-(1 white/25) absolute inset-0 rounded-lg)">
           <img src="/_assets/img/album-{{ album.data.title | slugify }}.jpg" alt="{{ album.data.title }} cover" class="rounded-lg" />
-          <figcaption class="py-3 text-lg flex items-center justify-between gap-2 absolute top-full inset-x-0 opacity-0 scale-95 -translate-y-5 motion-safe:(transition) group-hover:(opacity-100 scale-100 translate-y-0) group-focus-visible:(opacity-100 scale-100 translate-y-0)">
+          <figcaption class="py-3 text-lg flex items-center justify-between gap-2 absolute top-full inset-x-0 motion-safe:(transition) group-hover:(opacity-100 scale-100 translate-y-0) group-focus-visible:(opacity-100 scale-100 translate-y-0) md:(opacity-0 scale-95 -translate-y-5)">
             <i class="group-focus-visible:(outline-(& 2 offset-2) rounded)">{{ album.data.title }}</i>
             <small class="text-pri-700">{{ date | dateFormat('YYYY') }}</small>
           </figcaption>
         </figure>
       </a>
+      {%- set dialogTitle = album.data.title -%}
+      {%- set dialogTracks -%}<ul class="list-none divide-(y dashed zinc-500/20) [&>li]:(py-2 flex items-center justify-between)">{% for item in album.data.tracks %}<li>{{ item.title }} <small class="text-xs opacity-70">{{ item.time }}</small></li>{% endfor %}</ul>{%- endset -%}
     </li>
   {%- endfor %}
 </ul>
@@ -34,6 +44,6 @@ date: 2025-04-25
 
 {{ dialog({
   ref: 'tracks',
-  title: 'Track List',
-  slot: 'Coming soon...'
+  title: dialogTitle,
+  slot: dialogTracks
 }) }}
