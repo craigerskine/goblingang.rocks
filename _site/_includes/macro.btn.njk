@@ -1,5 +1,6 @@
 {%- macro btn(param) -%}
-  <a href="{{ param.url if param.url else '#' }}" class="
+  {%- set tag -%}{% if param.url %}a{% else %}button{% endif %}{%- endset -%}
+  <{{ tag }}{% if param.url %} href="{{ param.url }}"{% endif %} class="
     {{ 'p-2.5' if param.ico else 'px-6 py-2.5' }}
     text-2xl
     leading-none
@@ -25,7 +26,7 @@
     )
     after:(
       content-['']
-      bg-zinc-950
+      bg-zinc-900
       absolute
       inset-px
       z-[-1]
@@ -33,12 +34,12 @@
       transition
     )
     transition
-    hover:(text-sec-400 after:(bg-pri-900))
-  ">
+    hover:(text-sec-400 after:(bg-zinc-700))
+  "{{ param.props | safe -}}>
     {%- if param.ico %}
       <iconify-icon icon="{{ param.ico }}" width="24px" height="24px" class="iconify" aria-label="{{ param.title }}"></iconify-icon>
     {%- else %}
       {{ param.title }}
     {%- endif %}
-  </a>
+  </{{ tag }}>
 {%- endmacro -%}

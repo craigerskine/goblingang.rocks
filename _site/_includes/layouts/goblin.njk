@@ -4,13 +4,11 @@ layout: layouts/default.njk
 
 {%- from 'macro.btn.njk' import btn -%}
 
-<figure class="mx-auto w-full h-96 max-w-xs relative">
-  <img src="/_assets/img/goblin-{{ title | slugify }}.jpg" alt="{{ title }} photo" class="w-full h-full object-(cover top) rounded-xl" />
-  <figcaption class="p-5 bg-gradient-to-t from-black/75 absolute inset-x-0 bottom-0">
-    {{ desc }}
-  </figcaption>
+<figure class="flex-(& col) items-center gap-6 md:(flex-row-reverse items-start gap-12)">
+  <img src="/_assets/img/goblin-{{ title | slugify }}.jpg" alt="{{ title }} photo" class="w-full max-w-xs shrink-0 rounded-xl" />
+  <figcaption class="prose grow md:text-lg">{{ desc | md | safe }}</figcaption>
 </figure>
-<p class="pt-5 text-3xl flex justify-center">
+<p class="divider pt-6">
 {{ btn({
     title: 'Back',
     ico: 'mdi:arrow-left',

@@ -12,7 +12,32 @@ import presetLineclamp from '@twind/preset-line-clamp';
 import presetTypography from '@twind/preset-typography';
 
 install({
-  presets: [presetAutoprefix(), presetTailwind(), presetLineclamp(), presetTypography()],
+  presets: [presetAutoprefix(), presetTailwind(), presetLineclamp(), presetTypography({
+    extend: {
+      DEFAULT: {
+        css: {
+          '.prose': {
+            '--tw-prose-body': 'currentColor',
+            '--tw-prose-headings': 'theme(colors.zinc[500])',
+            '--tw-prose-lead': '',
+            '--tw-prose-links': 'theme(colors.pri[400])',
+            '--tw-prose-bold': 'theme(colors.sec[600])',
+            '--tw-prose-counters': 'theme(colors.zinc[500])',
+            '--tw-prose-bullets': 'theme(colors.zinc[500])',
+            '--tw-prose-hr': 'theme(colors.zinc[800])',
+            '--tw-prose-quotes': 'currentColor',
+            '--tw-prose-quote-borders': 'theme(colors.zinc[600])',
+            '--tw-prose-captions': '',
+            '--tw-prose-code': '',
+            '--tw-prose-pre-code': '',
+            '--tw-prose-pre-bg': '',
+            '--tw-prose-th-borders': 'theme(colors.zinc[600])',
+            '--tw-prose-td-borders': 'theme(colors.zinc[600])',
+          }
+        }
+      }
+    }
+  })],
   darkMode: 'class',
   hash: false,
   // tailwind config
@@ -71,6 +96,7 @@ injectGlobal`
     /* .some-selector,#some-selector { @apply text-wrap-balance; } */
     [x-cloak] { @apply hidden; }
     .link { @apply text-sec-600 transition hover:(text-sec-300 underline); }
+    .divider { @apply flex items-center gap-6 [&:before,&:after]:(content-[''] h-px bg-[linear-gradient(90deg,_theme(colors.sec.900)_0%,_theme(colors.sec.900)_35%,_theme(colors.sec.200)_50%,_theme(colors.sec.900)_65%,_theme(colors.sec.900)_100%)] grow opacity-50); }
     .tippy-box[data-state="hidden"] { @apply opacity-0 translate-y-1; }
     [data-tippy-root] { @apply max-w-[calc(100vw-10px)]; }
     .tippy-box { @apply bg-black text-(white/80 xs) font-semibold relative outline-0 opacity-100 rounded translate-y-0 motion-safe:(transition duration-75); }
