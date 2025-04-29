@@ -2,7 +2,7 @@
 title: Klokpunchr
 position: Manager
 desc: |
-  Once a paper-pusher for the Bureau of Tunnel Logistics, he quit after a **rage fit** involving ink imps and a flaming ledger.
+  Once a paper-pusher for the _Bureau of Tunnel Logistics_, he quit after a **rage fit** involving ink imps and a flaming ledger.
 
   Now, he manages _Goblin Gang_ with a clipboard made from troll hide and drinks 14 cups of fungus brew a day.
 

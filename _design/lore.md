@@ -19,4 +19,4 @@ Legend says his guitar is strung with ork sinew. He learned to carve sound from 
 
 ## 📋 Klokpunchr
 
-Once a paper-pusher for the Bureau of Tunnel Logistics, Scabbert quit after a rage fit involving ink imps and a flaming ledger. Now, he manages Goblin Gang with a clipboard made from troll hide and drinks 14 cups of fungus brew a day. No one knows when he sleeps.
+Once a paper-pusher for the Bureau of Tunnel Logistics, he quit after a rage fit involving ink imps and a flaming ledger. Now, he manages Goblin Gang with a clipboard made from troll hide and drinks 14 cups of fungus brew a day. No one knows when he sleeps.
