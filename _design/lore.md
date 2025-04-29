@@ -13,7 +13,7 @@ A devout follower of The Great Rolling One, Blorbo believes every strike is a di
 
 Snagglevox’s voice cracked open a cave ceiling at age 7. His guitar strings snap constantly — some say from his unhinged energy, others claim he bites them mid-solo. He writes lyrics in bloodroot ink and considers chaos a musical note.
 
-## 🎸 Qranock
+## 🎸 Qranog
 
 Legend says his guitar is strung with ork sinew. He learned to carve sound from stone long before he touched a guitar. Obsessed with forgotten frequencies and ancient tech, he built his first instrument from cracked relics and vibrating boneplates.
 

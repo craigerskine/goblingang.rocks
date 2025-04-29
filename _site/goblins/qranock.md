@@ -1,5 +1,5 @@
 ---
-title: Qranock
+title: Qranog
 position: Guitars / Gear
 desc: |
   Legend says his guitar is strung with ork **sinew**, **ligaments**, and **tendons**.
