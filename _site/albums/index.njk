@@ -5,11 +5,6 @@ subtitle: Listener BEWARE
 date: 2025-04-25
 ---
 
-{#-
-  ⚠️⚠️⚠️⚠️
-  TODO: alpine dispatch data to modal
--#}
-
 {%- from 'macro.btn.njk' import btn -%}
 {%- from 'macro.dialog.njk' import dialog -%}
 
@@ -19,8 +14,8 @@ date: 2025-04-25
 <ul class="mx-auto max-w-xs grid-(& cols-1) items-center gap-12 md:(max-w-none grid-cols-3)">
 
   {%- for album in collections.albums %}
-    <li class="md:col-start-2" x-data='{ tracks: {{ album.data.tracks }} }'>
-      <a @click.prevent="$refs.tracks.showModal()" href="#" class="group block focus-visible:(outline-none)">
+    <li class="md:col-start-2">
+      <a @click.prevent="document.getElementById('{{ 'lp-'+ album.data.title | slugify }}').showModal()" href="#" class="group block focus-visible:(outline-none)">
         <figure class="mb-12 relative before:(content-[''] bg-gradient-to-br from-white/25 via-transparent absolute inset-0 rounded-lg) after:(content-[''] border-(1 white/25) absolute inset-0 rounded-lg)">
           <img src="/_assets/img/album-{{ album.data.title | slugify }}.jpg" alt="{{ album.data.title }} cover" class="rounded-lg" />
           <figcaption class="py-3 text-lg flex items-center justify-between gap-2 absolute top-full inset-x-0 motion-safe:(transition) group-hover:(opacity-100 scale-100 translate-y-0) group-focus-visible:(opacity-100 scale-100 translate-y-0) md:(opacity-0 scale-95 -translate-y-5)">
@@ -29,21 +24,19 @@ date: 2025-04-25
           </figcaption>
         </figure>
       </a>
-      {%- set dialogTitle = album.data.title -%}
-      {%- set dialogTracks -%}<ol class="list-decimal pl-5 [&>li]:(py-2.5 pl-1 [&::marker]:(text-white/50 [font-variant-numeric:tabular-nums]))">{% for item in album.data.tracks %}<li><div class="flex items-center justify-between gap-4">{{ item.title }} <small class="text-xs opacity-70">{{ item.time }}</div></small></li>{% endfor %}</ol>{%- endset -%}
+      {%- set dialogTracks -%}<ol class="list-decimal pl-5 [&>li]:(py-2.5 pl-1 [&::marker]:(text-(white/50 lg) leading-none font-goblin [font-variant-numeric:tabular-nums]))">{% for item in album.data.tracks %}<li><div class="flex items-center justify-between gap-4">{{ item.title }} <small class="text-xs opacity-70">{{ item.time }}</div></small></li>{% endfor %}</ol>{%- endset -%}
+      {{ dialog({
+        id: 'lp-'+ album.data.title | slugify,
+        title: album.data.title +' <small>'+ date | dateFormat('YYYY') +'</small>',
+        slot: dialogTracks
+      }) }}
     </li>
   {%- endfor %}
 </ul>
 <p class="pt-5 text-3xl flex justify-center">
   {{ btn({
     title: 'Back',
-    ico: 'mdi:arrow-left-circle-outline',
+    ico: 'mdi:arrow-left',
     url: '/'
   }) }}
 </p>
-
-{{ dialog({
-  ref: 'tracks',
-  title: dialogTitle,
-  slot: dialogTracks
-}) }}
