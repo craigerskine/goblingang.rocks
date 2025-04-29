@@ -5,7 +5,7 @@ layout: layouts/default.njk
 {%- from 'macro.btn.njk' import btn -%}
 
 <figure class="flex-(& col) items-center gap-6 relative md:(flex-row-reverse items-start gap-12)">
-  <img src="/_assets/img/goblin-{{ title | slugify }}.jpg" alt="{{ title }} photo" class="p-px w-full max-w-xs bg-[linear-gradient(55deg,_theme(colors.sec.600)_0%,_theme(colors.sec.600)_35%,_theme(colors.sec.200)_50%,_theme(colors.sec.600)_65%,_theme(colors.sec.600)_100%)] shrink-0 rounded-xl shadow-(2xl sec-200/25)" />
+  <img src="/_assets/img/goblin-{{ title | slugify }}.jpg" alt="{{ title }} photo" class="p-px w-full max-w-xs bg-[linear-gradient(55deg,_theme(colors.sec.600)_0%,_theme(colors.sec.600)_35%,_theme(colors.sec.200)_50%,_theme(colors.sec.600)_65%,_theme(colors.sec.600)_100%)] shrink-0 rounded-xl shadow-(2xl)" />
   <figcaption class="prose grow md:text-lg">
     {{ desc | md | safe }}
     <span class="text-sec-300 block absolute -top-2.5 right-1/2 translate-x-1/2 animate-ping md:(-right-2.5 translate-x-0)" aria-hidden="true"><iconify-icon icon="mdi:sparkles" width="24px" height="24px" class="iconify"></iconify-icon></span>

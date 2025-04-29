@@ -2,7 +2,7 @@
   {%- set tag -%}{% if param.url %}a{% else %}button{% endif %}{%- endset -%}
   <{{ tag }}{% if param.url %} href="{{ param.url }}"{% endif %} class="
     {{ 'p-2.5' if param.ico else 'px-6 py-2.5' }}
-    text-2xl
+    text-(sec-100 2xl)
     leading-none
     font-goblin
     inline-flex
@@ -40,7 +40,7 @@
       transition-all
     )
     transition
-    hover:(text-sec-400 after:(shadow-[inset_0_1px_0_rgb(255_255_255_/_.75)] bg-[length:100%_100%]))
+    hover:(text-sec-200 after:(shadow-[inset_0_1px_0_rgb(255_255_255_/_.75)] bg-[length:100%_100%]))
   "{{ param.props | safe -}}>
     {%- if param.ico %}
       <iconify-icon icon="{{ param.ico }}" width="24px" height="24px" class="iconify" aria-label="{{ param.title }}"></iconify-icon>
