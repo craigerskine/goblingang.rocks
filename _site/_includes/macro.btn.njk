@@ -27,14 +27,20 @@
     after:(
       content-['']
       bg-zinc-900
+      bg-[length:100%_0%]
+      bg-gradient-to-b
+      bg-no-repeat
+      from-white/30
+      via-transparent
+      to-transparent
       absolute
       inset-px
       z-[-1]
       rounded-[inherit]
-      transition
+      transition-all
     )
     transition
-    hover:(text-sec-400 after:(bg-zinc-700))
+    hover:(text-sec-400 after:(shadow-[inset_0_1px_0_rgb(255_255_255_/_.75)] bg-[length:100%_100%]))
   "{{ param.props | safe -}}>
     {%- if param.ico %}
       <iconify-icon icon="{{ param.ico }}" width="24px" height="24px" class="iconify" aria-label="{{ param.title }}"></iconify-icon>
