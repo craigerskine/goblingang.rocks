@@ -21,7 +21,7 @@ install({
             '--tw-prose-headings': 'theme(colors.zinc[500])',
             '--tw-prose-lead': '',
             '--tw-prose-links': 'theme(colors.pri[400])',
-            '--tw-prose-bold': 'theme(colors.sec[600])',
+            '--tw-prose-bold': 'theme(colors.white)',
             '--tw-prose-counters': 'theme(colors.zinc[500])',
             '--tw-prose-bullets': 'theme(colors.zinc[500])',
             '--tw-prose-hr': 'theme(colors.zinc[800])',
