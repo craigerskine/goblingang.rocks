@@ -163,8 +163,10 @@ injectGlobal`
       [&::backdrop]:(bg-black/70 backdrop-blur-sm)
       md:items-center;
     }
-    .dialog-box { @apply my-6 p-6 w-11/12 max-w-lg max-h-[calc(100vh-5em)] bg-zinc-800 col-start-1 row-start-1 overflow-y-auto [overscroll-behavior:contain] translate-y-3 rounded-xl shadow-2xl scale-90 motion-safe:(transition-all); }
-    .dialog-title { @apply mb-6 text-(white 3xl) leading-none font-goblin flex items-end gap-4 [&>small]:(text-base leading-tight opacity-70); }
+    .dialog-box { @apply my-6 border-(1 sec-300/10) w-11/12 max-w-lg max-h-[calc(100vh-5em)] bg-(zinc-950 noise) flex-(& col) col-start-1 row-start-1 translate-y-3 rounded-xl shadow-2xl scale-90 before:(content-[''] h-48 bg-gradient-to-b from-white/10 absolute inset-x-0 top-0 z-[-1] shadow-[inset_0_1px_0_rgba(255,255,255,.25)] rounded-[inherit]) motion-safe:(transition-all); }
+    .dialog-header { @apply p-6 border-(b sec-300/10) flex items-center justify-between shrink-0 sticky top-0; }
+    .dialog-title { @apply text-(white 3xl) leading-none font-goblin flex items-end gap-4 [&>small]:(text-base leading-tight opacity-70); }
+    .dialog-body { @apply p-6 grow overflow-y-auto [overscroll-behavior:contain]; }
     .dialog-backdrop { @apply text-transparent grid col-start-1 row-start-1 self-stretch justify-self-stretch fixed inset-0 -z-[1]; }
     .link { @apply text-sec-600 transition hover:(text-sec-300 underline); }
     .divider { @apply flex items-center gap-6 [&:before,&:after]:(content-[''] h-px bg-[linear-gradient(90deg,_theme(colors.sec.900)_0%,_theme(colors.sec.900)_35%,_theme(colors.sec.200)_50%,_theme(colors.sec.900)_65%,_theme(colors.sec.900)_100%)] grow opacity-50); }
