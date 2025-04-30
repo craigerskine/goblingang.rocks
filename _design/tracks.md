@@ -1,7 +1,7 @@
 Tracks
 ====
 
-## 1: Wretchmaw Awakens
+## 1. Wretchmaw Awakens
 
 - **Mood:** A slow crawl from darkness, heavy and looming.
 - **Key:** We'll center it around G minor, so we can end on G (3rd fret low E string).
@@ -20,33 +20,19 @@ E|-3~--------------------------| ← start G
 - The final G (3rd fret low E) will also be the first note of the final track.
 - Add a touch of vibrato or let it decay naturally for mood.
 
-***
+## 2. Bowling for Blood
 
-## Bowling for Blood
+## 3. Fungus Brew Blues
 
-***
+## 4. Bloodroot Lullaby
 
-## Fungus Brew Blues
+## 5. Teeth in the Tunnels
 
-***
+## 6. Hymn to the Great Rolling One
 
-## Bloodroot Lullaby
+## 7. Echoes of Mold
 
-***
-
-## Teeth in the Tunnels
-
-***
-
-## Hymn to the Great Rolling One
-
-***
-
-## Echoes of Mold
-
-***
-
-## 8: Shriek of the Hollow King
+## 8. Shriek of the Hollow King
 
 - **Mood:** Distant, echoing collapse — like a throne room caving in.
 - **Key:** Also G minor, but more broken, mournful.
