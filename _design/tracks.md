@@ -10,10 +10,10 @@ Tracks
 ```
 e|-----------------------------|
 B|-----------------------------|
-G|-----------3~----------------|
-D|------5---------3~---1-------|
-A|-5---------------------------|
-E|--------------------------3~-| ← ends on G (3rd fret low E)
+G|------------------2~---------|
+D|-------------0-----------3~--|
+A|-------2---------------------|
+E|-3~--------------------------| ← start G
 ```
 
 - Let each note ring out.
@@ -64,4 +64,4 @@ E|--------------------------3~-| ← final G
 - Again, super slow — this feels like the last breath of a doomed king.
 - Optionally fade out with reverb or slide down after the final note.
 
-Both tracks start and end on G for seamless playback. The Hollow King's death becomes the Wretchmaw's rebirth.
+⚠️⚠️ First and last tracks start and end on G for seamless playback. The Hollow King's death becomes the Wretchmaw's rebirth.
