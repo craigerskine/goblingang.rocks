@@ -1,47 +1,6 @@
 {%- macro btn(param) -%}
   {%- set tag -%}{% if param.url %}a{% else %}button{% endif %}{%- endset -%}
-  <{{ tag }}{% if param.url %} href="{{ param.url }}"{% endif %} class="
-    {{ 'p-2.5' if param.ico else 'px-6 py-2.5' }}
-    text-(sec-100 2xl)
-    leading-none
-    font-goblin
-    inline-flex
-    items-center
-    justify-center
-    gap-2
-    relative
-    overflow-hidden
-    rounded-full
-    ring-(1 inset white/25)
-    shadow-lg
-    before:(
-      content-['']
-      w-full
-      aspect-square
-      bg-[linear-gradient(90deg,_theme(colors.sec.900/0)_0%,_theme(colors.sec.900)_35%,_theme(colors.sec.200)_50%,_theme(colors.sec.900)_65%,_theme(colors.sec.900/0)_100%)]
-      absolute
-      z-[-1]
-      transition
-      animate-[spin_3s_linear_infinite]
-    )
-    after:(
-      content-['']
-      bg-zinc-900
-      bg-[length:100%_0%]
-      bg-gradient-to-b
-      bg-no-repeat
-      from-white/30
-      via-transparent
-      to-transparent
-      absolute
-      inset-px
-      z-[-1]
-      rounded-[inherit]
-      transition-all
-    )
-    transition
-    hover:(text-sec-200 after:(shadow-[inset_0_1px_0_rgb(255_255_255_/_.75)] bg-[length:100%_100%]))
-  "{{ param.props | safe -}}>
+  <{{ tag }}{% if param.url %} href="{{ param.url }}"{% endif %} class="btn {{ 'p-2.5' if param.ico else 'px-6 py-2.5' }}"{{ param.props | safe -}}>
     {%- if param.ico %}
       <iconify-icon icon="{{ param.ico }}" width="24px" height="24px" class="iconify" aria-label="{{ param.title }}"></iconify-icon>
     {%- else %}

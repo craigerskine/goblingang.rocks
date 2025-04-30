@@ -95,6 +95,77 @@ injectGlobal`
   @layer base {
     /* .some-selector,#some-selector { @apply text-wrap-balance; } */
     [x-cloak] { @apply hidden; }
+    .btn { @apply
+      text-(sec-500 2xl)
+      leading-none
+      font-goblin
+      inline-flex
+      items-center
+      justify-center
+      gap-2
+      relative
+      overflow-hidden
+      rounded-full
+      ring-(1 inset white/25)
+      shadow-lg
+      before:(
+        content-['']
+        w-full
+        aspect-square
+        bg-[linear-gradient(90deg,_theme(colors.sec.900/0)_0%,_theme(colors.sec.900)_35%,_theme(colors.sec.200)_50%,_theme(colors.sec.900)_65%,_theme(colors.sec.900/0)_100%)]
+        absolute
+        z-[-1]
+        transition
+        animate-[spin_3s_linear_infinite]
+      )
+      after:(
+        content-['']
+        bg-zinc-900
+        bg-[length:100%_0%]
+        bg-gradient-to-b
+        bg-no-repeat
+        from-white/30
+        via-transparent
+        to-transparent
+        absolute
+        inset-px
+        z-[-1]
+        rounded-[inherit]
+        transition-all
+      )
+      transition
+      hover:(text-sec-100 after:(shadow-[inset_0_1px_0_rgb(255_255_255_/_.75)] bg-[length:100%_100%]));
+    }
+    .dialog {
+      @apply
+      m-0
+      p-0
+      w-full
+      max-w-none
+      h-full
+      max-h-none
+      min-h-screen
+      bg-transparent
+      text-[inherit]
+      invisible
+      grid
+      items-end
+      justify-items-center
+      fixed
+      inset-0
+      pointer-events-none
+      overflow-y-hidden
+      [overscroll-behavior:contain]
+      opacity-0
+      motion-safe:(transition-all)
+      [&[open]]:(pointer-events-auto visible opacity-100)
+      [&[open]_.dialog-box]:(translate-y-0 scale-100)
+      [&::backdrop]:(bg-black/70 backdrop-blur-sm)
+      md:items-center;
+    }
+    .dialog-box { @apply my-6 p-6 w-11/12 max-w-lg max-h-[calc(100vh-5em)] bg-zinc-800 col-start-1 row-start-1 overflow-y-auto [overscroll-behavior:contain] translate-y-3 rounded-xl shadow-2xl scale-90 motion-safe:(transition-all); }
+    .dialog-title { @apply mb-6 text-(white 3xl) leading-none font-goblin flex items-end gap-4 [&>small]:(text-base leading-tight opacity-70); }
+    .dialog-backdrop { @apply text-transparent grid col-start-1 row-start-1 self-stretch justify-self-stretch fixed inset-0 -z-[1]; }
     .link { @apply text-sec-600 transition hover:(text-sec-300 underline); }
     .divider { @apply flex items-center gap-6 [&:before,&:after]:(content-[''] h-px bg-[linear-gradient(90deg,_theme(colors.sec.900)_0%,_theme(colors.sec.900)_35%,_theme(colors.sec.200)_50%,_theme(colors.sec.900)_65%,_theme(colors.sec.900)_100%)] grow opacity-50); }
     .tippy-box[data-state="hidden"] { @apply opacity-0 translate-y-1; }
