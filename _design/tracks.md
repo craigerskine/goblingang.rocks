@@ -3,9 +3,9 @@ Tracks
 
 ## 1: Wretchmaw Awakens
 
-**Mood:** A slow crawl from darkness, heavy and looming.
-**Key:** We'll center it around G minor, so we can end on G (3rd fret low E string).
-**Tempo:** ~60 BPM, one note at a time.
+- **Mood:** A slow crawl from darkness, heavy and looming.
+- **Key:** We'll center it around G minor, so we can end on G (3rd fret low E string).
+- **Tempo:** ~60 BPM, one note at a time.
 
 ```
 e|-----------------------------|
@@ -48,9 +48,9 @@ E|-------------------3~--------| ← ends on G (3rd fret low E)
 
 ## 8: Shriek of the Hollow King
 
-**Mood:** Distant, echoing collapse — like a throne room caving in.
-**Key:** Also G minor, but more broken, mournful.
-**Goal:** Ends on the same G (3rd fret low string) as the start of Wretchmaw.
+- **Mood:** Distant, echoing collapse — like a throne room caving in.
+- **Key:** Also G minor, but more broken, mournful.
+- **Goal:** Ends on the same G (3rd fret low string) as the start of Wretchmaw.
 
 ```
 e|-----------------------------|
