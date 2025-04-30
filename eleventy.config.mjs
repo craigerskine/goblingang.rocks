@@ -15,8 +15,8 @@ export default function (eleventyConfig) {
   eleventyConfig.setDataFileBaseName('_data');
 
   eleventyConfig.addPassthroughCopy({
-    '_site/_assets/files': '_assets/files',
     '_site/_assets/img': '_assets/img',
+    '_site/_assets/font': '_assets/font',
     '_site/_assets/_root': './',
   });
 
