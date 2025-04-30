@@ -23,7 +23,7 @@ tracks:
   - title: Hymn to the Great Rolling One
     credits: Snagglevox
     time: 3:34
-  - title: Echoes in the Mold
+  - title: Echoes of Mold
     credits: Snagglevox
     time: 3:54
   # - title: Stringbreaker's Prayer
