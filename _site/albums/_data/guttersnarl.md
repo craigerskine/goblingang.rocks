@@ -3,7 +3,7 @@ title: Guttersnarl
 tracks:
   - title: Wretchmaw Awakens
     credits: Qraynog
-    time: 1:24
+    time: 1:03
   - title: Bowling for Blood
     credits: Snagglevox
     time: 3:11
@@ -32,7 +32,7 @@ tracks:
   #   time: ''
   - title: Shriek of the Hollow King
     credits: Qraynog
-    time: 00:52
+    time: 0:52
   # - title: Last Strike Before Dawn (bonus track)
   #   time: ''
 ---
