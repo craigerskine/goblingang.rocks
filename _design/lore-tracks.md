@@ -21,7 +21,7 @@ E|-3~--------------------------| ← start G
 - The final G (3rd fret low E) will also be the first note of the final track.
 - Add a touch of vibrato or let it decay naturally for mood.
 
-## 2. 🎳 Bowling for Blood
+## 🎳 2. Bowling for Blood
 
 **Story:** Blorbo Thumpgut receives a vision from the Great Rolling One: the time of ritual combat has come. Blood must be spilled upon the sacred lanes to awaken forgotten power. The goblins challenge rival tribes in gruesome, bowling-based duels. Pins are teeth. Balls are relics. Heads roll.
 
@@ -32,7 +32,7 @@ E|-3~--------------------------| ← start G
 - Short bursts of chaos (slides, pitch dives, squeals) like sudden impacts
 - Big tom-heavy drum grooves
 
-## 3. 🍄 Fungus Brew Blues
+## 🍄 3. Fungus Brew Blues
 
 **Story:** After the bloodshed, the gang drinks deep from hallucinogenic fungal brews. Their minds fracture, and each sees a different version of truth. The brew reveals memories of rot, moldy ancestors, and a voice murmuring from the pit below: Wretchmaw is not alone.
 
@@ -43,7 +43,7 @@ E|-3~--------------------------| ← start G
 - Weird bends or modal shifts (phrygian or diminished moments)
 - Let feedback linger like drunken haze
 
-## 4. 🥱 Bloodroot Lullaby
+## 🥱 4. Bloodroot Lullaby
 
 **Story:** The goblins rest beneath the bloom of bloodroot flowers, which grow only in cursed soil. In sleep, they dream of past goblin queens and kings — lullabies once sung now warped by centuries of darkness. The Hollow King’s childhood is hinted at here — lonely and buried.
 
@@ -54,7 +54,7 @@ E|-3~--------------------------| ← start G
 - Occasional dissonance creeping into the sweetness
 - This is your most "beautiful but haunted" track
 
-## 5. 🦷 Teeth in the Tunnels
+## 🦷 5. Teeth in the Tunnels
 
 **Story:** Awakened by whispers and stone gnawing, the goblins journey deeper underground. They’re not alone. Something old and sharp moves through the dark — bone serpents, blind leeches, and worse. One goblin disappears. Another returns changed.
 
@@ -65,7 +65,7 @@ E|-3~--------------------------| ← start G
 - Echo/delay on riffs like sounds bouncing through tunnels
 - Optional high-pitched scraping or noise layer (teeth)
 
-## 6. 🛼 Hymn to the Great Rolling One
+## 🛼 6. Hymn to the Great Rolling One
 
 **Story:** They reach the sacred underground altar. Blorbo leads a ritual — a pounding, rhythmic chant to the Great Rolling One. Glowing runes, ancient bowling balls with divine carvings, and rhythmic chanting echo through the halls. The Hollow King appears briefly in vision — weeping.
 
@@ -76,7 +76,7 @@ E|-3~--------------------------| ← start G
 - Layered guitars in call-and-response
 - Ends in a held chord or dissonant drone like a prayer left unanswered
 
-## 7. 🔊 Echoes of Mold
+## 🔊 7. Echoes of Mold
 
 **Story:** The goblins ascend again — but nothing is the same. The tunnels shift. Familiar voices echo, twisted by time and decay. The mold remembers everything. The gang realizes the Hollow King has been watching, feeding on their fear. He is the mold.
 
@@ -87,7 +87,7 @@ E|-3~--------------------------| ← start G
 - One riff or motif that repeats but keeps subtly changing
 - Ends with a fadeout or delay/reverb trail that bleeds directly into...
 
-## 8. 😱 Shriek of the Hollow King
+## 😱 8. Shriek of the Hollow King
 
 **Story:** The old tyrant falls, but his scream births something worse: Wretchmaw.
 
@@ -107,5 +107,7 @@ E|--------------------------3~-| ← final G
 
 - Again, super slow — this feels like the last breath of a doomed king.
 - Optionally fade out with reverb or slide down after the final note.
+
+***
 
 ⚠️⚠️ First and last tracks start and end on G for seamless playback. The Hollow King's death becomes the Wretchmaw's rebirth.
