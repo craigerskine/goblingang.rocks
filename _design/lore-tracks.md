@@ -23,7 +23,7 @@ E|-3~--------------------------| ← start G
 
 ## 🎳 2. Bowling for Blood
 
-**Story:** Blorbo Thumpgut receives a vision from the Great Rolling One: the time of ritual combat has come. Blood must be spilled upon the sacred lanes to awaken forgotten power. The goblins challenge rival tribes in gruesome, bowling-based duels. Pins are teeth. Balls are relics. Heads roll.
+**Story:** Thumpgut receives a vision from the Great Rolling One: the time of ritual combat has come. Blood must be spilled upon the sacred lanes to awaken forgotten power. The goblins challenge rival tribes in gruesome, bowling-based duels. Pins are teeth. Balls are relics. Heads roll.
 
 **Musical Idea:**
 
@@ -67,7 +67,7 @@ E|-3~--------------------------| ← start G
 
 ## 🛼 6. Hymn to the Great Rolling One
 
-**Story:** They reach the sacred underground altar. Blorbo leads a ritual — a pounding, rhythmic chant to the Great Rolling One. Glowing runes, ancient bowling balls with divine carvings, and rhythmic chanting echo through the halls. The Hollow King appears briefly in vision — weeping.
+**Story:** They reach the sacred underground altar. Thumpgut leads a ritual — a pounding, rhythmic chant to the Great Rolling One. Glowing runes, ancient bowling balls with divine carvings, and rhythmic chanting echo through the halls. The Hollow King appears briefly in vision — weeping.
 
 **Musical Idea:**
 
