@@ -33,7 +33,7 @@
             bg-(clip-text [linear-gradient(to_right,theme(colors.pri.300),theme(colors.pri.500),theme(colors.lime.500),theme(colors.pri.300))])
             text-(transparent 5xl)
             font-goblin
-            rotate-2
+            -rotate-3
             md:(text-[8rem] tracking-tight)
           ">
             {{ title if title else site.meta.title }}
@@ -48,9 +48,9 @@
         </article>
       </main>
 
-      <footer class="mt-auto py-12 px-4 w-full text-(zinc-400/75 sm center) italic shrink-0">
+      <footer class="mt-auto py-12 px-4 w-full text-(zinc-400/75 xs center) italic flex-(& wrap) items-center justify-center gap-2 shrink-0 md:(text-sm gap-3)">
         &copy;{% year %} {{ site.meta.title }}
-        <span class="mx-3 opacity-50" aria-hidden="true">::</span>
+        <span aria-hidden="true"><img src="/_assets/img/li-jewel.png" alt="jewel" /></span>
         Created by <a href="https://craigerskine.com/" class="link">Qranog</a> &amp; <a href="https://youtube.com/ideasbyelliot" class="link">Snagglevox</a>
       </footer>
 
