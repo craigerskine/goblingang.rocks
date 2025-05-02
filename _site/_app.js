@@ -20,7 +20,7 @@ install({
             '--tw-prose-body': 'currentColor',
             '--tw-prose-headings': 'theme(colors.pri[200])',
             '--tw-prose-lead': '',
-            '--tw-prose-links': 'theme(colors.pri[50])',
+            '--tw-prose-links': 'theme(colors.sec[400])',
             '--tw-prose-bold': 'theme(colors.white)',
             '--tw-prose-counters': 'theme(colors.zinc[500])',
             '--tw-prose-bullets': 'theme(colors.zinc[500])',
@@ -75,9 +75,9 @@ install({
       keyframes: {
         'header': {
           'to': { 'background-position': '-200% center' },
-          '0%': { 'transform': 'rotate(-3deg)' },
-          '50%': { 'transform': 'rotate(3deg)' },
-          '100%': { 'transform': 'rotate(-3deg)' },
+          '0%': { 'transform': 'translateY(-6px)' },
+          '50%': { 'transform': 'translateY(6px)' },
+          '100%': { 'transform': 'translateY(-6px)' },
         },
       },
       animation: {
