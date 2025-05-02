@@ -18,13 +18,13 @@ install({
         css: {
           '.prose': {
             '--tw-prose-body': 'currentColor',
-            '--tw-prose-headings': 'theme(colors.zinc[500])',
+            '--tw-prose-headings': 'theme(colors.pri[200])',
             '--tw-prose-lead': '',
-            '--tw-prose-links': 'theme(colors.pri[400])',
+            '--tw-prose-links': 'theme(colors.pri[50])',
             '--tw-prose-bold': 'theme(colors.white)',
             '--tw-prose-counters': 'theme(colors.zinc[500])',
             '--tw-prose-bullets': 'theme(colors.zinc[500])',
-            '--tw-prose-hr': 'theme(colors.zinc[800])',
+            '--tw-prose-hr': 'theme(colors.pri[900])',
             '--tw-prose-quotes': 'currentColor',
             '--tw-prose-quote-borders': 'theme(colors.zinc[600])',
             '--tw-prose-captions': '',

@@ -2,7 +2,10 @@
 layout: layouts/default.njk
 title: Albums
 subtitle: Listener BEWARE
-date: 2025-04-25
+eleventyComputed:
+  eleventyNavigation:
+    key: '{{ title }}'
+date: 0002-01-01
 ---
 
 {%- from 'macro.btn.njk' import btn -%}

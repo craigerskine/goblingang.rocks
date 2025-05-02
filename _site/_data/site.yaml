@@ -5,6 +5,14 @@ meta:
   author: Craig Erskine
   author_url: https://craigerskine.com
 
+info:
+  - title: Styles
+    ico: mdi:tailwind
+    url: https://twind.style/
+  - title: Source
+    ico: mdi:github
+    url: https://github.com/craigerskine/goblingang.rocks/
+
 analytics: |-
   // google analytics
   // window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
