@@ -73,12 +73,15 @@ install({
         goblin: ['Pirata One', ...theme('fontFamily.sans')],
       }),
       keyframes: {
-        'gradient': {
+        'header': {
           'to': { 'background-position': '-200% center' },
-        }
+          '0%': { 'transform': 'rotate(-3deg)' },
+          '50%': { 'transform': 'rotate(3deg)' },
+          '100%': { 'transform': 'rotate(-3deg)' },
+        },
       },
       animation: {
-        'gradient': 'gradient 4s linear infinite',
+        'header': 'header 5s cubic-bezier(1,.75,.25,1) infinite',
       },
     },
   },

@@ -29,15 +29,20 @@
         {%- include 'inc.nav.njk' -%}
         <div class="mx-auto py-12 px-4 max-w-5xl text-center">
           <h1 class="
-            animate-gradient
             bg-[length:200%_auto]
             bg-(clip-text [linear-gradient(to_right,theme(colors.pri.300),theme(colors.pri.500),theme(colors.lime.500),theme(colors.pri.300))])
             text-(transparent 5xl)
             font-goblin
-            -rotate-3
             md:(text-[8rem] tracking-tight)
+            motion-safe:(animate-header)
           ">
-            {{ title if title else site.meta.title }}
+            <span class="flex items-center justify-center gap-5">
+              {%- if page.url === '/' %}
+                {{ site.meta.title | replace(' ', '<img src="/_assets/img/jewel.png" alt="jewel" />') | safe }}
+              {%- else %}
+                {{ title }}
+              {%- endif %}
+            </span>
             <small class="text-(sec-500 xl) tracking-normal block md:(text-3xl)">{{ subtitle if subtitle else site.meta.description }}</small>
           </h1>
         </div>
