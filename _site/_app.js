@@ -81,7 +81,7 @@ install({
         },
       },
       animation: {
-        'header': 'header 5s cubic-bezier(1,.75,.25,1) infinite',
+        'header': 'header 5s ease infinite',
       },
     },
   },
