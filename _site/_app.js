@@ -176,12 +176,12 @@ injectGlobal`
     .divider { @apply flex items-center gap-6 [&:before,&:after]:(content-[''] h-px bg-[linear-gradient(90deg,_theme(colors.sec.900)_0%,_theme(colors.sec.900)_35%,_theme(colors.sec.200)_50%,_theme(colors.sec.900)_65%,_theme(colors.sec.900)_100%)] grow opacity-50); }
     .tippy-box[data-state="hidden"] { @apply opacity-0 translate-y-1; }
     [data-tippy-root] { @apply max-w-[calc(100vw-10px)]; }
-    .tippy-box { @apply bg-black text-(white/80 xs) font-semibold relative outline-0 opacity-100 rounded translate-y-0 motion-safe:(transition duration-75); }
+    .tippy-box { @apply bg-pri-50 text-(pri-900 xs) font-normal relative outline-0 opacity-100 rounded translate-y-0 motion-safe:(transition duration-75); }
     .tippy-box[data-placement^="top"] > .tippy-arrow { @apply bottom-0 before:(bottom-[-7px] left-0 border-(t-[8px] r-[8px] b-0 l-[8px] t-[initial])) origin-top; }
     .tippy-box[data-placement^="bottom"] > .tippy-arrow { @apply top-0 before:(top-[-7px] left-0 border-(t-0 r-[8px] b-[8px] l-[8px] b-[initial])) origin-bottom; }
     .tippy-box[data-placement^="left"] > .tippy-arrow {@apply right-0 before:(right-[-7px] border-(t-[8px] r-0 b-[8px] l-[8px] l-[initial])) origin-left; }
     .tippy-box[data-placement^="right"] > .tippy-arrow { @apply left-0 before:(left-[-7px] border-(t-[8px] r-[8px] b-[8px] l-0 r-[initial]) origin-right); }
-    .tippy-arrow { @apply w-4 h-4 text-black absolute before:(content-[''] absolute border-(transparent solid)); }
+    .tippy-arrow { @apply w-4 h-4 text-pri-50 absolute before:(content-[''] absolute border-(transparent solid)); }
     .tippy-content { @apply py-1.5 px-3 relative z-[1]; }
   }
 `

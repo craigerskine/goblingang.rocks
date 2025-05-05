@@ -1,0 +1,8 @@
+{%- set classInfo = 'w-10 h-10 text-zinc-500/70 inline-flex items-center justify-center rounded-full transition hover:(text-pri-400 bg-pri-500/20)' -%}
+<nav>
+  <ul class="pt-1 text-base flex-(& wrap) items-center justify-center gap-1">
+    {%- for item in site.info %}
+      <li><a x-tooltip="'{{ item.title }}'" href="{{ item.url }}" class="{{ classInfo }}" aria-label="{{ item.title }}"><iconify-icon icon="{{ item.ico }}"></iconify-icon></a></li>
+    {%- endfor %}
+  </ul>
+</nav>

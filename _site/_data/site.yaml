@@ -1,16 +1,22 @@
 meta:
   title: Goblin Gang
   description: Snarl. Shred. Worship.
-  url: https://goblingang-music.netlify.app/
+  url: https://goblinegang.rocks/
   author: Craig Erskine
   author_url: https://craigerskine.com
 
 info:
-  - title: Styles
-    ico: mdi:tailwind
+  - title: 'CSS: Twind'
+    ico: simple-icons:tailwindcss
     url: https://twind.style/
-  - title: Source
-    ico: mdi:github
+  - title: 'SSG: 11ty'
+    ico: simple-icons:eleventy
+    url: https://11ty.dev/
+  - title: 'Host: Netlify'
+    ico: simple-icons:netlify
+    url: https://netlify.com/
+  - title: 'Source: GitHub'
+    ico: simple-icons:github
     url: https://github.com/craigerskine/goblingang.rocks/
 
 analytics: |-
