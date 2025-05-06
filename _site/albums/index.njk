@@ -19,8 +19,8 @@ date: 0002-01-01
   {%- for album in collections.albums %}
     <li class="md:col-start-2">
       <a @click.prevent="document.getElementById('{{ 'lp-'+ album.data.title | slugify }}').showModal()" href="#" class="group block focus-visible:(outline-none)">
-        <figure class="mb-12 relative before:(content-[''] bg-gradient-to-br from-white/25 via-transparent absolute inset-0 rounded-xl)">
-          <img src="/_assets/img/album-{{ album.data.title | slugify }}.jpg" alt="{{ album.data.title }} cover" class="p-px w-full max-w-xs bg-gradient-to-br from-sec-200 via-sec-900/75 to-sec-900/75 shrink-0 rounded-xl shadow-2xl" />
+        <figure class="mb-12 relative before:(content-[''] bg-gradient-to-br from-white/25 via-transparent absolute inset-0 rounded)">
+          <img src="/_assets/img/album-{{ album.data.title | slugify }}.jpg" alt="{{ album.data.title }} cover" class="p-px w-full max-w-xs bg-gradient-to-br from-sec-200 via-sec-900/75 to-sec-900/75 shrink-0 rounded shadow-2xl" />
           <figcaption class="py-3 text-lg flex items-center justify-between gap-2 absolute top-full inset-x-0 motion-safe:(transition) group-hover:(opacity-100 scale-100 translate-y-0) group-focus-visible:(opacity-100 scale-100 translate-y-0) md:(opacity-0 scale-95 -translate-y-5)">
             <i class="group-focus-visible:(outline-(& 2 offset-2) rounded)">{{ album.data.title }}</i>
             <small class="text-pri-700">{{ date | dateFormat('YYYY') }}</small>
