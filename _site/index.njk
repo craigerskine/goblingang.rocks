@@ -3,7 +3,7 @@ layout: layouts/default.njk
 ---
 {%- from 'macro.btn.njk' import btn -%}
 
-<ul class="group mx-auto max-w-2xl h-96 flex justify-center gap-2 max-md:(h-auto grid grid-cols-2 gap-5)">
+<ul class="group mx-auto max-w-2xl h-auto grid-(& cols-1) gap-5 xs:(grid-cols-2) md:(h-96 flex justify-center gap-2)">
   {%- for goblin in collections.goblins %}
     <li class="group/goblin
       relative

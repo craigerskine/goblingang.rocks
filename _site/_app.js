@@ -43,6 +43,9 @@ install({
   // tailwind config
   theme: {
     extend: {
+      screens: {
+        xs: '480px',
+      },
       colors: ({ theme }) => ({
         pri: theme('colors.emerald'),
         sec: theme('colors.lime'),
