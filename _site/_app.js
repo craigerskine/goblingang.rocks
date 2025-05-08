@@ -117,8 +117,8 @@ injectGlobal`
         aspect-square
         bg-[linear-gradient(90deg,_theme(colors.sec.900/0)_0%,_theme(colors.sec.900)_35%,_theme(colors.sec.200)_50%,_theme(colors.sec.900)_65%,_theme(colors.sec.900/0)_100%)]
         absolute
+        inset-x-0
         z-[-1]
-        transition
         animate-[spin_3s_linear_infinite]
       )
       after:(
@@ -137,7 +137,7 @@ injectGlobal`
         transition-all
       )
       shadow-(lg zinc-950/50)
-      transition
+      transition-[color,box-shadow]
       hover:(text-sec-100 scale-105 after:(shadow-[inset_0_1px_0_rgb(255_255_255_/_.75)] bg-[length:100%_100%]));
     }
     .dialog {
