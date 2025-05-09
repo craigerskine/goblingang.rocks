@@ -12,7 +12,7 @@
     <dialog id="{{ param.id if param.id else 'dialog' }}" class="dialog"{{ param.props | safe }}>
       <div class="dialog-box">
         <div class="dialog-header">
-          <form method="dialog" class="absolute -top-4 -right-4">{{ btn({ tag: 'button', title: 'Close', ico: 'mdi:close' }) }}</form>
+          <form method="dialog" class="absolute -top-3 -right-3">{{ btn({ tag: 'button', title: 'Close', ico: 'mdi:close' }) }}</form>
           {%- if param.title %}<h3 class="dialog-title">{{ param.title | safe }}</h3>{%- endif %}
         </div>
         <div class="dialog-body">
