@@ -1,5 +1,6 @@
 ---
 title: Guttersnarl
+date: 2025-04-29
 tracks:
   - title: Wretchmaw Awakens
     credits: Qraynog

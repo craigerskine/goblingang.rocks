@@ -23,14 +23,15 @@ date: 0002-01-01
           <img src="/_assets/img/album-{{ album.data.title | slugify }}.jpg" alt="{{ album.data.title }} cover" class="p-px w-full max-w-xs bg-gradient-to-br from-sec-200 via-sec-900/75 to-sec-900/75 shrink-0 rounded shadow-2xl" />
           <figcaption class="py-3 text-lg flex items-center justify-between gap-2 absolute top-full inset-x-0 motion-safe:(transition) group-hover:(opacity-100 scale-100 translate-y-0) group-focus-visible:(opacity-100 scale-100 translate-y-0) md:(opacity-0 scale-95 -translate-y-5)">
             <i class="group-focus-visible:(outline-(& 2 offset-2) rounded)">{{ album.data.title }}</i>
-            <small class="text-pri-700">{{ date | dateFormat('YYYY') }}</small>
+            <small class="text-pri-700">{{ album.data.date | dateFormat('YYYY') }}</small>
           </figcaption>
+          <span class="text-sec-300 block absolute -top-2.5 right-1/2 translate-x-1/2 animate-ping md:(-right-2.5 translate-x-0)" aria-hidden="true"><iconify-icon icon="mdi:sparkles" width="24px" height="24px" class="iconify"></iconify-icon></span>
         </figure>
       </a>
       {%- set dialogTracks -%}<ol class="list-decimal pl-6 [&>li]:(py-2.5 pl-1 [&::marker]:(text-(white/40 lg) leading-none font-goblin [font-variant-numeric:tabular-nums]))">{% for item in album.data.tracks %}<li><div class="flex items-center justify-between gap-4"><div>{{ item.title }} <i class="text-xs block opacity-70">{{ item.credits }}</i></div> <small class="text-xs shrink-0 opacity-70">{{ item.time }}</div></small></li>{% endfor %}</ol>{%- endset -%}
       {{ dialog({
         id: 'lp-'+ album.data.title | slugify,
-        title: album.data.title +' <small>'+ date | dateFormat('YYYY') +'</small>',
+        title: album.data.title +' <small>'+ album.data.date | dateFormat('YYYY') +'</small>',
         slot: dialogTracks
       }) }}
     </li>
