@@ -1,0 +1,8 @@
+---
+permalink: _assets/logos.svg
+---
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+{%- for item in logos %}
+  <symbol viewBox="0 0 280 100" id="logo-{{ item.title | slugify }}">{{ item.logo | trim | safe }}</symbol>
+{%- endfor %}
+</svg>
