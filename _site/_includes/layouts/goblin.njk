@@ -9,7 +9,7 @@ layout: layouts/default.njk
   <figcaption class="prose max-w-[80ch] grow md:text-lg">
     {{ desc | md | safe }}
     {%- if gear %}
-      <ul class="list-none m-0 p-0 flex-(& wrap) gap-6 [&>li]:(m-0 p-2 border-(t l sec-300/20) bg-pri-500/20 rounded-lg shadow-lg)">
+      <ul class="list-none m-0 p-0 flex-(& wrap) gap-6 [&>li]:(m-0 p-2 bg-(pri-500/20 gradient-to-b) from-white/10 to-black/10 ring-(1 inset sec-300/20) rounded-lg shadow-lg)">
         {%- for item in gear %}
           <li>
             <svg xmlns="http://www.w3.org/2000/svg" width="280" height="100" role="img" class="w-28 h-auto fill-current">
@@ -23,8 +23,8 @@ layout: layouts/default.njk
     <span class="text-sec-300 block absolute -top-2.5 right-1/2 translate-x-1/2 animate-ping md:(-right-2.5 translate-x-0)" aria-hidden="true"><iconify-icon icon="mdi:sparkles" width="24px" height="24px" class="iconify"></iconify-icon></span>
   </figcaption>
 </figure>
-<p class="divider pt-6">
-{{ btn({
+<p class="pt-6 text-center">
+  {{ btn({
     title: 'Back',
     ico: 'mdi:arrow-left',
     url: '/'
