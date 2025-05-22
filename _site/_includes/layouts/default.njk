@@ -36,9 +36,9 @@
             md:(text-[8rem] tracking-tight)
             motion-safe:(animate-header)
           ">
-            <span class="flex items-center justify-center gap-5">
+            <span class="flex items-center justify-center gap-3 md:gap-5">
               {%- if page.url === '/' %}
-                {{ site.meta.title | replace(' ', '<img src="/_assets/img/jewel.png" alt="jewel" />') | safe }}
+                {{ site.meta.title | replace(' ', '<img src="/_assets/img/jewel.png" alt="jewel" class="w-6 h-auto md:w-auto" />') | safe }}
               {%- else %}
                 {{ title }}
               {%- endif %}
