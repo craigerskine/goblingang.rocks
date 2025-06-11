@@ -9,7 +9,11 @@ desc: |
   Obsessed with forgotten frequencies and ancient tech, he built his first instrument from **cracked relics** and **vibrating boneplates**.
 excerpt: His guitar is strung with ork sinew and forged from vibrating boneplates.
 gear:
-  - Kiesel
-  - Fishman
+  Kiesel:
+    url: https://kieselguitars.com
+  Fishman:
+    url: https://fishman.com
+  Neural DSP:
+    url: https://neuraldsp.com
 date: 0004-01-01
 ---

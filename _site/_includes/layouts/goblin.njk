@@ -9,16 +9,19 @@ layout: layouts/default.njk
   <figcaption class="prose max-w-[80ch] grow md:text-lg">
     {{ desc | md | safe }}
     {%- if gear %}
-      <ul class="list-none m-0 p-0 flex-(& wrap) gap-6 [&>li]:(m-0 p-2 bg-(pri-500/20 gradient-to-b) from-white/10 to-black/10 ring-(1 inset sec-300/20) rounded-lg shadow-lg)">
-        {%- for item in gear %}
+    <div class="not-prose">
+      <ul class="my-2 flex-(& wrap) gap-6 [&_a]:(m-0 p-2 text-current bg-(pri-500/20 gradient-to-b) from-white/20 inline-flex rounded-lg shadow-[inset_0_1px_2px_rgba(255,255,255,.25),inset_0_0_0_1px_rgba(255,255,255,.05),0_2px_6px_rgba(0,0,0,.75)] transition hover:(text-pri-50 bg-pri-500/40))">
+        {%- for item, props in gear %}
           <li>
-            <svg xmlns="http://www.w3.org/2000/svg" width="280" height="100" role="img" class="w-28 h-auto fill-current">
-              <title>{{ item }}</title>
-              <use href="/_assets/logos.svg#logo-{{ item | slugify }}" />
-            </svg>
+            <a href="{{ props.url }}" aria-label="{{ item }}">
+              <svg xmlns="http://www.w3.org/2000/svg" width="280" height="100" role="img" class="w-28 h-auto fill-current">
+                <use href="/_assets/logos.svg?bust={% bust %}#logo-{{ item | slugify }}" />
+              </svg>
+            </a>
           </li>
         {%- endfor %}
       </ul>
+    </div>
     {%- endif %}
     <span class="text-sec-300 block absolute -top-2.5 right-1/2 translate-x-1/2 animate-ping md:(-right-2.5 translate-x-0)" aria-hidden="true"><iconify-icon icon="mdi:sparkles" width="24px" height="24px" class="iconify"></iconify-icon></span>
   </figcaption>
