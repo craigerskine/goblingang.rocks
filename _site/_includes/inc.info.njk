@@ -2,7 +2,7 @@
 <nav>
   <ul class="pt-1 text-base flex-(& wrap) items-center justify-center gap-1">
     {%- for item in site.info %}
-      <li><a x-tooltip="'{{ item.title }}'" href="{{ item.url }}" class="{{ classInfo }}" aria-label="{{ item.title }}"><iconify-icon icon="{{ item.ico }}"></iconify-icon></a></li>
+      <li><a x-tooltip="'{{ item.title }}'" href="{{ item.url }}" class="{{ classInfo }}" aria-label="{{ item.title }}"><iconify-icon icon="{{ item.ico }}" noobserver></iconify-icon></a></li>
     {%- endfor %}
   </ul>
 </nav>
