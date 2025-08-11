@@ -2,7 +2,7 @@
 <nav class="pt-4 px-6 divider">
   <ul class="text-(pri-500 2xl) uppercase font-goblin flex items-center gap-6 justify-end">
     {%- if page.url !== '/' %}
-      <li><a href="/" class="{{ classNav }} after:(hidden)" aria-label="Home"><img src="/_assets/img/jewel.png" alt="jewel" class="w-auto h-[35px] block" /></a></li>
+      <li><a href="/" class="{{ classNav }} w-11 after:(hidden)" aria-label="Home"><img src="/_assets/img/jewel.png" alt="jewel" class="mx-auto h-[35px] block" /></a></li>
     {%- endif %}
     {%- for item in collections.all | eleventyNavigation() %}
       <li><a href="{{ item.url }}" class="{{ classNav }} after:({% if page.url === item.url %}w-full{% else %}w-0{% endif %})"{% if page.url === item.url %} aria-current="page"{% endif %}>{{ item.title }}</a></li>
