@@ -54,13 +54,13 @@
         </article>
       </main>
 
-      <footer class="divider mt-auto p-6 pt-12 w-full text-(zinc-400/75 xs center) italic shrink-0 md:(text-sm)">
-        <div>
-          <div class="flex-(& wrap) items-center justify-center gap-2 md:gap-3">
-            <span>&copy;{% year %} {{ site.meta.title }}</span>
-            <span aria-hidden="true"><img src="/_assets/img/jewel.png" alt="jewel" class="w-auto h-[24px]" /></span>
-            <span>Created by <a href="/goblins/qranog/" class="link">Qranog</a></span>
-          </div>
+      <footer class="divider-middle mt-auto p-6 pt-12 w-full text-(zinc-400/75 xs center) italic shrink-0 flex-col after:(w-full) md:(w-auto text-sm flex-row)">
+        <div class="shrink-0 flex-(& wrap) items-center justify-center gap-2 order-first md:gap-3">
+          <span>&copy;{% year %} {{ site.meta.title }}</span>
+          <span aria-hidden="true"><img src="/_assets/img/jewel.png" alt="jewel" class="w-auto h-[24px]" /></span>
+          <span>Created by <a href="/goblins/qranog/" class="link">Qranog</a></span>
+        </div>
+        <div class="shrink-0 order-last">
           {%- include 'inc.info.njk' -%}
         </div>
       </footer>

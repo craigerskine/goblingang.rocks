@@ -177,6 +177,7 @@ injectGlobal`
     .dialog-backdrop { @apply text-transparent grid col-start-1 row-start-1 self-stretch justify-self-stretch fixed inset-0 -z-[1]; }
     .link { @apply text-sec-600 transition hover:(text-sec-300 underline); }
     .divider { @apply flex items-center gap-6 [&:before,&:after]:(content-[''] h-px bg-[linear-gradient(90deg,_theme(colors.sec.900)_0%,_theme(colors.sec.900)_35%,_theme(colors.sec.200)_50%,_theme(colors.sec.900)_65%,_theme(colors.sec.900)_100%)] grow opacity-50); }
+    .divider-middle { @apply flex items-center gap-6 [&:after]:(content-[''] h-px order-2 bg-[linear-gradient(90deg,_theme(colors.sec.900)_0%,_theme(colors.sec.900)_35%,_theme(colors.sec.200)_50%,_theme(colors.sec.900)_65%,_theme(colors.sec.900)_100%)] grow opacity-50); }
     .tippy-box[data-state="hidden"] { @apply opacity-0 translate-y-1; }
     [data-tippy-root] { @apply max-w-[calc(100vw-10px)]; }
     .tippy-box { @apply bg-pri-50 text-(pri-900 xs) font-normal relative outline-0 opacity-100 rounded translate-y-0 motion-safe:(transition duration-75); }
