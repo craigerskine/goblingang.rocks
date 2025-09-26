@@ -11,9 +11,13 @@ excerpt: His guitar is strung with ork sinew and forged from vibrating boneplate
 gear:
   Kiesel:
     url: https://kieselguitars.com
+  .strandberg*:
+    url: https://strandbergguitars.com/
   Fishman:
     url: https://fishman.com
   Neural DSP:
     url: https://neuraldsp.com
+  Polychrome DSP:
+    url: https://polychromedsp.com
 date: 0004-01-01
 ---

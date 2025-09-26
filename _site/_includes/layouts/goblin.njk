@@ -10,10 +10,10 @@ layout: layouts/default.njk
     {{ desc | md | safe }}
     {%- if gear %}
     <div class="not-prose">
-      <ul class="my-2 flex-(& wrap) gap-6 [&_a]:(m-0 p-2 text-current bg-(pri-500/20 gradient-to-b) from-white/20 inline-flex rounded-lg shadow-[inset_0_1px_2px_rgba(255,255,255,.25),inset_0_0_0_1px_rgba(255,255,255,.05),0_2px_6px_rgba(0,0,0,.75)] transition hover:(text-pri-50 bg-pri-500/40))">
+      <ul class="my-2 grid-(& cols-3) gap-6">
         {%- for item, props in gear %}
           <li>
-            <a href="{{ props.url }}" aria-label="{{ item }}">
+            <a href="{{ props.url }}" aria-label="{{ item }}" class="p-2 flex items-center justify-center opacity-50 rounded-lg transition hover:(bg-sec-500/10 ring-(1 inset white/10) opacity-100) focus:(bg-sec-500/10 ring-(1 inset white/10) opacity-100)">
               <svg xmlns="http://www.w3.org/2000/svg" width="280" height="100" role="img" class="w-28 h-auto fill-current">
                 <use href="/_assets/logos.svg?bust={% bust %}#logo-{{ item | slugify }}" />
               </svg>
