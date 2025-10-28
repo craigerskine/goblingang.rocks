@@ -11,17 +11,17 @@ date: 0002-01-01
 {%- from 'macro.btn.njk' import btn -%}
 {%- from 'macro.dialog.njk' import dialog -%}
 
-{%- set dialogTitle = '' -%}
-{%- set dialogTracks = '' -%}
+{#- {%- set dialogTitle = '' -%}
+{%- set dialogTracks = '' -%} -#}
 
-<ul class="mx-auto max-w-xs grid-(& cols-1) items-center gap-12 md:(max-w-none grid-cols-3)">
+<ul class="mx-auto max-w-xs grid-(& cols-1) items-center gap-12 md:(max-w-3xl)">
 
   {%- for album in collections.albums %}
-    <li class="md:col-start-2">
-      <a @click.prevent="document.getElementById('{{ 'lp-'+ album.data.title | slugify }}').showModal()" href="#" class="group block focus-visible:(outline-none)">
-        <figure class="mb-12 relative before:(content-[''] border-(t sec-500/25) h-6 bg-gradient-to-b from-pri-300/10 absolute -bottom-7 inset-x-0 rounded blur-[1.5px])">
-          <img src="/_assets/img/album-{{ album.data.title | slugify }}.jpg" alt="{{ album.data.title }} cover" class="p-px w-full max-w-xs bg-gradient-to-br from-sec-200 via-sec-900/75 to-sec-900/75 shrink-0 rounded shadow-2xl" />
-          <figcaption class="p-2 text-lg flex items-center justify-between gap-2 absolute top-full inset-x-0 motion-safe:(transition) group-hover:(opacity-100 scale-100 translate-y-0) group-focus-visible:(opacity-100 scale-100 translate-y-0) md:(opacity-0 scale-95 -translate-y-5)">
+    <li class="grid grid-cols-1 gap-x-12 gap-y-8 md:grid-cols-2">
+      <a @click.prevent{#="document.getElementById('{{ 'lp-'+ album.data.title | slugify }}').showModal()"#} href="#" class="shrink-0 focus-visible:(outline-none)">
+        <figure class="relative">
+          <img src="/_assets/img/album-{{ album.data.title | slugify }}.jpg" alt="{{ album.data.title }} cover" class="p-px w-full bg-gradient-to-br from-sec-200 via-sec-900/75 to-sec-900/75 shrink-0 rounded shadow-2xl" />
+          <figcaption class="p-2 text-lg flex items-center justify-between gap-2">
             <i class="group-focus-visible:(outline-(& 2 offset-2) rounded)">{{ album.data.title }}</i>
             <small class="text-pri-700">{{ album.data.date | dateFormat('YYYY') }}</small>
           </figcaption>
@@ -29,11 +29,15 @@ date: 0002-01-01
         </figure>
       </a>
       {%- set dialogTracks -%}<ol class="list-decimal pl-6 [&>li]:(py-2.5 pl-1 [&::marker]:(text-(white/40 lg) leading-none font-goblin [font-variant-numeric:tabular-nums]))">{% for item in album.data.tracks %}<li><div class="flex items-center justify-between gap-4"><div>{{ item.title }} <i class="text-xs block opacity-70">{{ item.credits }}</i></div> <small class="text-xs shrink-0 opacity-70">{{ item.time }}</div></small></li>{% endfor %}</ol>{%- endset -%}
-      {{ dialog({
+      <div>
+        <strong class="divider mb-8 text-xs uppercase md:hidden">Tracks</strong>
+        {{ dialogTracks | safe }}
+      </div>
+      {#- {{ dialog({
         id: 'lp-'+ album.data.title | slugify,
         title: album.data.title +' <small>'+ album.data.date | dateFormat('YYYY') +'</small>',
         slot: dialogTracks
-      }) }}
+      }) }} -#}
     </li>
   {%- endfor %}
 </ul>
