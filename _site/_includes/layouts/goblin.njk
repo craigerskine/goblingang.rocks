@@ -4,6 +4,18 @@ layout: layouts/default.njk
 
 {%- from 'macro.btn.njk' import btn -%}
 
+<nav class="pb-6 flex items-center justify-center gap-1 md:(pb-12 gap-4)">
+  <ul class="flex items-center gap-1 md:gap-4">
+    {%- for goblin in collections.goblins %}
+    <li>
+      <a href="{{ goblin.url }}" class="block ring-1 {{ 'ring-sec-300/100 opacity-100 scale-125 pointer-events-none' if goblin.url === page.url else 'ring-white/0 opacity-50' }} rounded-full transition hover:(ring-white/100 opacity-100)" aria-label="{{ goblin.data.title }}" x-tooltip="'{{ goblin.data.title }}'">
+        <img class="w-11 h-11 block object-cover object-top rounded-full" src="/_assets/img/goblin-{{ goblin.data.title | slugify }}.jpg" width="44" height="44" alt="{{ goblin.data.title }} photo" />
+      </a>
+    </li>
+    {%- endfor %}
+  </ul>
+</nav>
+
 <figure class="flex-(& col) items-center gap-6 relative md:(flex-row-reverse items-start gap-12)">
   <img src="/_assets/img/goblin-{{ title | slugify }}.jpg" alt="{{ title }} photo" class="p-px border-(& black) w-full max-w-xs bg-gradient-to-br from-sec-200 to-sec-700 shrink-0 rounded-xl shadow-2xl" />
   <figcaption class="prose max-w-[80ch] grow [&>p]:text-wrap-balance md:text-lg">
@@ -26,19 +38,11 @@ layout: layouts/default.njk
     <span class="text-sec-300 block absolute -top-2.5 right-1/2 translate-x-1/2 animate-ping md:(-right-2.5 translate-x-0)" aria-hidden="true"><iconify-icon icon="mdi:sparkles" width="24px" height="24px" class="iconify" noobserver></iconify-icon></span>
   </figcaption>
 </figure>
-<nav class="pt-6 flex items-center justify-center gap-1 md:gap-4">
+
+<p class="pt-6 text-center">
   {{ btn({
     title: 'Back',
     ico: 'mdi:arrow-left',
     url: '/'
   }) }}
-  <ul class="flex items-center gap-1 md:gap-4">
-    {%- for goblin in collections.goblins %}
-    <li>
-      <a href="{{ goblin.url }}" class="block ring-1 {{ 'ring-sec-300/100 opacity-100 pointer-events-none' if goblin.url === page.url else 'ring-white/0 opacity-50' }} rounded-full transition hover:(ring-white/100 opacity-100)" aria-label="{{ goblin.data.title }}" x-tooltip="'{{ goblin.data.title }}'">
-        <img class="w-11 h-11 block object-cover object-top rounded-full" src="/_assets/img/goblin-{{ goblin.data.title | slugify }}.jpg" width="44" height="44" alt="{{ goblin.data.title }} photo" />
-      </a>
-    </li>
-    {%- endfor %}
-  </ul>
-</nav>
+</p>
