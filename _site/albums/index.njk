@@ -18,17 +18,34 @@ date: 0002-01-01
 
   {%- for album in collections.albums %}
     <li class="grid grid-cols-1 gap-x-12 gap-y-8 md:grid-cols-2">
-      <a @click.prevent{#="document.getElementById('{{ 'lp-'+ album.data.title | slugify }}').showModal()"#} href="#" class="shrink-0 focus-visible:(outline-none)">
-        <figure class="relative">
-          <img src="/_assets/img/album-{{ album.data.title | slugify }}.jpg" alt="{{ album.data.title }} cover" class="p-px w-full bg-gradient-to-br from-sec-200 via-sec-900/75 to-sec-900/75 shrink-0 rounded shadow-2xl" />
-          <figcaption class="p-2 text-lg flex items-center justify-between gap-2">
-            <i class="group-focus-visible:(outline-(& 2 offset-2) rounded)">{{ album.data.title }}</i>
-            <small class="text-pri-700">{{ album.data.date | dateFormat('YYYY') }}</small>
-          </figcaption>
-          <span class="text-sec-300 block absolute -top-2.5 -right-2.5 animate-ping" aria-hidden="true"><iconify-icon icon="mdi:sparkles" width="24px" height="24px" class="iconify" noobserver></iconify-icon></span>
-        </figure>
-      </a>
-      {%- set dialogTracks -%}<ol class="list-decimal pl-6 [&>li]:(py-2.5 pl-1 [&::marker]:(text-(white/40 lg) leading-none font-goblin [font-variant-numeric:tabular-nums]))">{% for item in album.data.tracks %}<li><div class="flex items-center justify-between gap-4"><div>{{ item.title }} <i class="text-xs block opacity-70">{{ item.credits }}</i></div> <small class="text-xs shrink-0 opacity-70">{{ item.time }}</div></small></li>{% endfor %}</ol>{%- endset -%}
+      {#- <a @click.prevent="document.getElementById('{{ 'lp-'+ album.data.title | slugify }}').showModal()" href="#" class="shrink-0 focus-visible:(outline-none)"> #}
+        <div class="shrink-0">
+          <figure class="relative">
+            <img src="/_assets/img/album-{{ album.data.title | slugify }}.jpg" alt="{{ album.data.title }} cover" class="p-px w-full bg-gradient-to-br from-sec-200 via-sec-900/75 to-sec-900/75 shrink-0 rounded shadow-2xl" />
+            <figcaption class="p-2 text-lg grid grid-cols-[auto_auto] items-center justify-between gap-2">
+              <i class="group-focus-visible:(outline-(& 2 offset-2) rounded)">{{ album.data.title }}</i>
+              <small class="text-pri-700">{{ album.data.date | dateFormat('YYYY') }}</small>
+              <div class="py-2 w-full col-span-2"><p class="divider">{{ btn({ title: 'Buy', url: '#', props: ' @click.prevent x-tooltip="\'Coming soon...\'"'}) }}</p></div>
+            </figcaption>
+            <span class="text-sec-300 block absolute -top-2.5 -right-2.5 animate-ping" aria-hidden="true"><iconify-icon icon="mdi:sparkles" width="24px" height="24px" class="iconify" noobserver></iconify-icon></span>
+          </figure>
+        </div>
+      {#- </a> #}
+      {%- set dialogTracks -%}
+        <ol class="list-decimal pl-6 [&>li]:(py-2.5 pl-1 [&::marker]:(text-(white/40 xl) leading-none font-goblin [font-variant-numeric:tabular-nums]))">
+          {% for item in album.data.tracks %}
+            <li>
+              <div class="flex justify-between gap-4">
+                <div class="pl-1">
+                  <div class="leading-6 -translate-y-0.5">{{ item.title }}</div>
+                  <i class="text-xs block opacity-70">{{ item.credits }}</i>
+                </div>
+                <small class="text-xs leading-6 shrink-0 opacity-70">{{ item.time }}</small>
+              </div>
+            </li>
+          {% endfor %}
+        </ol>
+      {%- endset -%}
       <div>
         <strong class="divider mb-8 text-xs uppercase md:hidden">Tracks</strong>
         {{ dialogTracks | safe }}
