@@ -9,7 +9,7 @@ layout: layouts/default.njk
     {%- for goblin in collections.goblins %}
     <li>
       <a href="{{ goblin.url }}" class="block ring-1 {{ 'ring-sec-300/100 opacity-100 scale-125 pointer-events-none' if goblin.url === page.url else 'ring-white/0 opacity-50' }} rounded-full transition hover:(ring-white/100 opacity-100)" aria-label="{{ goblin.data.title }}" x-tooltip="'{{ goblin.data.title }}'">
-        <img class="w-11 h-11 block object-cover object-top rounded-full" src="/_assets/img/goblin-{{ goblin.data.title | slugify }}.jpg" width="44" height="44" alt="{{ goblin.data.title }} photo" />
+        <img class="w-11 h-11 block object-cover object-top rounded-full" src="/_assets/img/goblin-{{ goblin.data.title | slugify }}-th.jpg" width="44" height="44" alt="{{ goblin.data.title }} photo" />
       </a>
     </li>
     {%- endfor %}
