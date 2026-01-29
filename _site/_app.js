@@ -99,7 +99,7 @@ install({
 injectGlobal`
   /* layers: defaults, base, components, shortcuts, utilities, overrides */
   @layer base {
-    /* .some-selector,#some-selector { @apply text-wrap-balance; } */
+    :focus-visible { @apply outline-(& 2 current offset-2); }
     [x-cloak] { @apply hidden; }
     .btn { @apply
       text-(sec-500 2xl)

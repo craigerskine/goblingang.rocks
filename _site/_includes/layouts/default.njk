@@ -1,4 +1,7 @@
+{%- from 'macro.heading.njk' import heading -%}
 {%- set pageTitle -%}{{ title +' :: '+ site.meta.title if title else site.meta.title }}{%- endset -%}
+{%- set headingTitle -%}{{ title if title else site.meta.title }}{%- endset -%}
+{%- set headingSubtitle -%}{{ subtitle if subtitle else site.meta.description }}{%- endset -%}
 
 <!doctype html>
 <html lang="en" class="bg-transparent antialiased [&:has(:is(dialog[open]))]:(overflow-hidden [scrollbar-gutter:stable])" x-data>
@@ -27,24 +30,11 @@
 
       <header class="w-full shrink-0">
         {%- include 'inc.nav.njk' -%}
-        <div class="mx-auto py-12 px-4 max-w-5xl text-center">
-          <h1 class="
-            bg-[length:200%_auto]
-            bg-(clip-text [linear-gradient(to_right,theme(colors.pri.300),theme(colors.pri.500),theme(colors.lime.500),theme(colors.pri.300))])
-            text-(transparent 5xl)
-            font-goblin
-            md:(text-[8rem] tracking-tight)
-            motion-safe:(animate-header)
-          ">
-            <span class="flex items-center justify-center gap-3 md:gap-5">
-              {%- if page.url === '/' %}
-                {{ site.meta.title | replace(' ', '<img src="/_assets/img/jewel.png" alt="jewel" class="w-6 h-auto md:w-auto" />') | safe }}
-              {%- else %}
-                {{ title }}
-              {%- endif %}
-            </span>
-            <small class="text-(sec-500 xl) tracking-normal block md:(text-3xl)">{{ subtitle if subtitle else site.meta.description }}</small>
-          </h1>
+        <div class="mx-auto py-12 px-4 max-w-5xl text-center{{ ' hidden' if title === 'Goblins' }}">
+          {{ heading({
+            title: headingTitle,
+            subtitle: headingSubtitle
+          }) }}
         </div>
       </header>
 

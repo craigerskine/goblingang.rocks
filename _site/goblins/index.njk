@@ -1,9 +1,107 @@
 ---
-layout: false
-eleventyExcludeFromCollections: true
+layout: layouts/default.njk
+title: Goblins
+subtitle: The "Band"
 ---
-<!DOCTYPE html>
-<html lang="en">
-<head><meta http-equiv="refresh" content="0; url=/"></head>
-<body></body>
-</html>
+
+{%- from 'macro.heading.njk' import heading -%}
+{%- from 'macro.btn.njk' import btn -%}
+
+<div
+  x-data="{
+    active: '{{ collections.goblins[0].data.title | slugify }}',
+    init() {
+      this.readHash();
+      window.addEventListener('hashchange', () => this.readHash());
+      this.$watch('active', (value) => {
+        const newHash = value ? '#' + value : '';
+        if (window.location.hash !== newHash) {
+          window.location.hash = value || '';
+        }
+      });
+    },
+    readHash() {
+      const hash = window.location.hash;
+      this.active = hash ? hash.substring(1) : null;
+    },
+    setActive(tab) {
+      this.active = tab;
+    }
+  }"
+  x-cloak
+>
+  <nav
+    @keydown.left.prevent.stop="$focus.wrap().prev()"
+    @keydown.right.prevent.stop="$focus.wrap().next()"
+    @keydown.home.prevent.stop="$focus.first()"
+    @keydown.page-up.prevent.stop="$focus.first()"
+    @keydown.end.prevent.stop="$focus.last()"
+    @keydown.page-down.prevent.stop="$focus.last()"
+    class="pb-6 flex items-center justify-center gap-1 md:(pb-12 gap-4)"
+  >
+    <ul class="flex items-center gap-1 md:gap-4" role="tablist">
+      {%- for goblin in collections.goblins %}
+        {%- set titleSlug = goblin.data.title | slugify -%}
+        <li role="presentation">
+          <button
+            x-tooltip="'{{ goblin.data.title }}'"
+            @click.prevent="setActive('{{ titleSlug }}')"
+            @focus="active = '{{ titleSlug }}'"
+            @mousedown.prevent
+            :tabindex="active === '{{ titleSlug }}' ? '0' : '-1'"
+            :aria-selected="active === '{{ titleSlug }}'"
+            :class="active === '{{ titleSlug }}' ? 'ring-sec-300/100 opacity-100 scale-125 pointer-events-none' : 'ring-white/0 opacity-40'"
+            class="block ring-2 rounded-full transition hover:(outline-white opacity-100) focus-visible:(ring-0)"
+            aria-label="{{ goblin.data.title }}"
+            aria-controls="tabpanel-{{ titleSlug }}"
+            id="tab-{{ titleSlug }}"
+            role="tab"
+          >
+            <img class="w-11 h-11 block object-cover object-top rounded-full" src="/_assets/img/goblin-{{ titleSlug }}-th.jpg" width="44" height="44" alt="{{ goblin.data.title }} photo" />
+          </button>
+        </li>
+      {%- endfor %}
+    </ul>
+  </nav>
+  
+  {%- for goblin in collections.goblins %}
+    {%- set titleSlug = goblin.data.title | slugify -%}
+    <div x-show="active === '{{ titleSlug }}'" x-transition:enter.opacity.duration.500ms x-transition:leave.opacity.duration.0ms id="tabpanel-{{ titleSlug }}" class="focus-visible:outline-none" :style="active !== '{{ titleSlug }}' && 'display: none'" tabindex="0" role="tabpanel" aria-labelledby="tab-{{ titleSlug }}">
+      {{ heading({
+        title: goblin.data.title,
+        subtitle: goblin.data.position
+      }) }}
+      <figure class="mt-12 flex-(& col) items-center gap-6 relative md:(flex-row-reverse items-start gap-12)">
+        <img src="/_assets/img/goblin-{{ titleSlug }}.jpg" alt="{{ goblin.data.title }} photo" class="p-px border-(& black) w-full max-w-xs bg-gradient-to-br from-sec-200 to-sec-700 shrink-0 rounded-xl shadow-2xl" />
+        <figcaption class="prose max-w-[80ch] grow [&>p]:text-wrap-balance md:text-lg">
+          {{ goblin.data.desc | md | safe if goblin.data.desc }}
+          {%- if goblin.data.gear %}
+            <div class="not-prose">
+              <ul class="my-2 grid-(& cols-3) gap-6">
+                {%- for item, props in goblin.data.gear %}
+                  <li>
+                    <a href="{{ props.url }}" aria-label="{{ item }}" class="p-2 bg-zinc-500/20 flex items-center justify-center opacity-50 rounded-lg transition hover:(bg-sec-500/10 ring-(1 inset white/10) opacity-100) focus:(bg-sec-500/10 ring-(1 inset white/10) opacity-100)">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="280" height="100" role="img" class="w-28 h-auto fill-current">
+                        <use href="/_assets/logos.svg?bust={% bust %}#logo-{{ item | slugify }}" />
+                      </svg>
+                    </a>
+                  </li>
+                {%- endfor %}
+              </ul>
+            </div>
+          {%- endif %}
+          <span class="text-sec-300 block absolute -top-2.5 right-1/2 translate-x-1/2 animate-ping md:(-right-2.5 translate-x-0)" aria-hidden="true"><iconify-icon icon="mdi:sparkles" width="24px" height="24px" class="iconify" noobserver></iconify-icon></span>
+        </figcaption>
+      </figure>
+    </div>
+  {%- endfor %}
+</div>
+
+
+<p class="pt-6 text-center">
+  {{ btn({
+    title: 'Back',
+    ico: 'mdi:arrow-left',
+    url: '/'
+  }) }}
+</p>

@@ -1,0 +1,20 @@
+{%- macro heading(param) -%}
+  {%- set tag -%}{{ param.tag if param.tag else 'h1' }}{%- endset -%}
+  <{{ tag }} class="
+    bg-[length:200%_auto]
+    bg-(clip-text [linear-gradient(to_right,theme(colors.pri.300),theme(colors.pri.500),theme(colors.lime.500),theme(colors.pri.300))])
+    text-(transparent 5xl center)
+    font-goblin
+    md:(text-[8rem] tracking-tight)
+    motion-safe:(animate-header)
+  ">
+    <span class="flex items-center justify-center gap-3 md:gap-5">
+      {%- if param.title === 'Goblin Gang' %}
+        Goblin <img src="/_assets/img/jewel.png" alt="jewel" class="w-6 h-auto md:w-auto" /> Gang
+      {%- else %}
+        {{ param.title }}
+      {%- endif %}
+    </span>
+    <small class="text-(sec-500 xl) tracking-normal block md:(text-3xl)">{{ param.subtitle }}</small>
+  </{{ tag }}>
+{%- endmacro -%}

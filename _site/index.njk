@@ -27,7 +27,7 @@ layout: layouts/default.njk
       after:backdrop-blur
       after:transition-all
     ">
-      <a href="{{ goblin.url }}" class="absolute inset-0 text-white z-10">
+      <a href="/goblins/#{{ goblin.data.title | slugify }}" class="absolute inset-0 text-white z-10">
         <span class="
           py-2.5
           px-5
