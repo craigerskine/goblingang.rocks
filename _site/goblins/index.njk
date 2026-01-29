@@ -2,6 +2,10 @@
 layout: layouts/default.njk
 title: Goblins
 subtitle: The "Band"
+eleventyComputed:
+  eleventyNavigation:
+    key: '{{ title }}'
+date: 0001-01-01
 ---
 
 {%- from 'macro.heading.njk' import heading -%}
@@ -9,7 +13,7 @@ subtitle: The "Band"
 
 <div
   x-data="{
-    active: '{{ collections.goblins[0].data.title | slugify }}',
+    active: null,
     init() {
       this.readHash();
       window.addEventListener('hashchange', () => this.readHash());
@@ -22,7 +26,7 @@ subtitle: The "Band"
     },
     readHash() {
       const hash = window.location.hash;
-      this.active = hash ? hash.substring(1) : null;
+      this.active = hash ? hash.substring(1) : '{{ collections.goblins[0].data.title | slugify }}';
     },
     setActive(tab) {
       this.active = tab;
