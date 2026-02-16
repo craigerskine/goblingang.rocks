@@ -54,8 +54,8 @@ date: 0001-01-01
             @mousedown.prevent
             :tabindex="active === '{{ titleSlug }}' ? '0' : '-1'"
             :aria-selected="active === '{{ titleSlug }}'"
-            :class="active === '{{ titleSlug }}' ? 'ring-sec-300/100 opacity-100 scale-125 pointer-events-none' : 'ring-white/0 opacity-40'"
-            class="block ring-2 rounded-full transition hover:(outline-white opacity-100) focus-visible:(ring-0)"
+            :class="active === '{{ titleSlug }}' ? 'active outline-current opacity-100 scale-125 pointer-events-none' : 'outline-transparent opacity-40'"
+            class="block relative outline-(& 2 offset-2) rounded-full transition after:(border-(2 transparent) absolute inset-0 rounded-full pointer-events-none) hover:(outline-sec-300 opacity-100) [&.active:after]:(border-current animate-ping)"
             aria-label="{{ goblin.data.title }}"
             aria-controls="tabpanel-{{ titleSlug }}"
             id="tab-{{ titleSlug }}"
