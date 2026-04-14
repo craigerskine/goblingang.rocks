@@ -12,13 +12,6 @@ desc: |
 
 excerpt: His guitar is strung with ork sinew and forged from vibrating boneplates.
 
-brands:
-  Kiesel: https://kieselguitars.com
-  .strandberg*: https://strandbergguitars.com/
-  Fishman: https://fishman.com
-  Neural DSP: https://neuraldsp.com
-  Polychrome DSP: https://polychromedsp.com
-
 gear:
   Guitars:
     - title: Kiesel › Vader
@@ -55,6 +48,17 @@ gear:
       url: https://neuraldsp.com/plugins/archetype-tim-henson
     - title: Archetype › Gojira
       url: https://neuraldsp.com/plugins/archetype-gojira
+  Brands:
+    - title: Kiesel
+      url: https://kieselguitars.com
+    - title: .strandberg*
+      url: https://strandbergguitars.com/
+    - title: Fishman
+      url: https://fishman.com
+    - title: Neural DSP
+      url: https://neuraldsp.com
+    - title: Polychrome DSP
+      url: https://polychromedsp.com
 
 date: 0004-01-01
 ---

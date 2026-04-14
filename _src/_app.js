@@ -143,6 +143,131 @@ injectGlobal`
       transition-[color,box-shadow]
       hover:(text-sec-100 scale-105 after:(shadow-[inset_0_1px_0_rgb(255_255_255_/_.75)] bg-[length:100%_100%]));
     }
+
+    .tabs {
+      @apply flex flex-wrap;
+      --tabs-height: auto;
+      --tabs-direction: row;
+      --tab-height: calc(var(--size-field, 0.25rem) * 10);
+      height: var(--tabs-height);
+      flex-direction: var(--tabs-direction);
+    }
+
+    .tab {
+      @apply text-current hover:text-white relative inline-flex cursor-pointer appearance-none flex-wrap items-center justify-center text-center select-none;
+      --tab-p: 0.75rem;
+      --tab-bg: color-mix(in oklab, currentColor, #0000 90%);
+      --tab-border-color: color-mix(in oklab, currentColor, #0000 90%);
+      --tab-radius-ss: 0;
+      --tab-radius-se: 0;
+      --tab-radius-es: 0;
+      --tab-radius-ee: 0;
+      --tab-order: 0;
+      border-color: #0000;
+      order: var(--tab-order);
+      height: var(--tab-height);
+      font-size: 0.875rem;
+      padding-inline: var(--tab-p);
+
+      &:is(input[type="radio"]) {
+        &:after {
+          --tw-content: attr(aria-label);
+          content: var(--tw-content);
+        }
+      }
+      &:is(label) {
+        @apply relative;
+        input {
+          @apply absolute inset-0 cursor-pointer appearance-none opacity-0;
+        }
+      }
+
+      &:checked,
+      &:is(label:has(:checked)),
+      &:is(.tab-active, [aria-selected="true"], [aria-current="true"], [aria-current="page"]) {
+        & + .tab-content {
+          @apply block;
+        }
+      }
+      &:not(
+        :checked,
+        label:has(:checked),
+        :hover,
+        .tab-active,
+        [aria-selected="true"],
+        [aria-current="true"],
+        [aria-current="page"]
+      ) {
+        @apply text-white/50;
+      }
+
+      &:not(input):empty {
+        @apply grow cursor-default;
+      }
+
+      &:focus {
+        @apply outline-hidden;
+      }
+
+      &:focus-visible,
+      &:is(label:has(:checked:focus-visible)) {
+        outline: 2px solid currentColor;
+        outline-offset: -5px;
+      }
+
+      &[disabled] {
+        @apply pointer-events-none opacity-40;
+      }
+    }
+
+    .tab-content {
+      @apply order-1 hidden border-transparent;
+      --tabcontent-radius-ss: var(--radius-box);
+      --tabcontent-radius-se: var(--radius-box);
+      --tabcontent-radius-es: var(--radius-box);
+      --tabcontent-radius-ee: var(--radius-box);
+
+      --tabcontent-order: 1;
+      width: 100%;
+      height: calc(100% - var(--tab-height) + var(--border));
+      margin: var(--tabcontent-margin);
+      order: var(--tabcontent-order);
+      border-width: 0;
+      border-start-start-radius: var(--tabcontent-radius-ss);
+      border-start-end-radius: var(--tabcontent-radius-se);
+      border-end-start-radius: var(--tabcontent-radius-es);
+      border-end-end-radius: var(--tabcontent-radius-ee);
+    }
+
+    .tabs-border {
+      & > .tab-content { @apply border-t [border-color:color-mix(in_oklab,currentColor,#0000_75%)] pt-6; }
+      & > .tab {
+        --tab-border-color: #0000 #0000 var(--tab-border-color) #0000;
+        position: relative;
+        &:before {
+          content: "";
+          background-color: var(--tab-border-color);
+          transition: background-color 0.2s ease;
+          width: 100%;
+          height: 3px;
+          bottom: 0;
+          left: 0;
+          position: absolute;
+        }
+        &:is(.tab-active, [aria-selected="true"], [aria-current="true"], [aria-current="page"]):not(
+            .tab-disabled,
+            [disabled]
+          ),
+        &:is(input:checked),
+        &:is(label:has(:checked)) {
+          &:before {
+            --tab-border-color: currentColor;
+            border-top: 3px solid;
+          }
+        }
+      }
+    }
+
     .dialog {
       @apply
       m-0
