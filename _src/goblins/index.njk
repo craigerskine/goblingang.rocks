@@ -79,12 +79,13 @@ date: 0001-01-01
         <img src="/_assets/img/goblin-{{ titleSlug }}.jpg" alt="{{ goblin.data.title }} photo" class="p-px border-(& black) w-full max-w-xs bg-gradient-to-br from-sec-200 to-sec-700 shrink-0 rounded-xl shadow-2xl" />
         <figcaption class="prose max-w-xs grow [&>p]:text-wrap-pretty md:(max-w-lg text-lg)">
           {{ goblin.data.desc | md | safe if goblin.data.desc }}
-          {%- if goblin.data.gear %}
+          {%- if goblin.data.brands %}
+            <h3>Brands</h3>
             <div class="not-prose">
-              <ul class="my-2 grid-(& cols-3) gap-6">
-                {%- for item, props in goblin.data.gear %}
+              <ul class="grid-(& cols-3) gap-6">
+                {%- for item, url in goblin.data.brands %}
                   <li>
-                    <a href="{{ props.url }}" aria-label="{{ item }}" class="p-2 bg-zinc-500/20 flex items-center justify-center opacity-50 rounded-lg transition hover:(bg-sec-500/10 ring-(1 inset white/10) opacity-100) focus:(bg-sec-500/10 ring-(1 inset white/10) opacity-100)">
+                    <a href="{{ url | url }}" aria-label="{{ item }}" class="p-2 bg-zinc-500/20 flex items-center justify-center opacity-50 rounded-lg transition hover:(bg-sec-500/10 ring-(1 inset white/10) opacity-100) focus:(bg-sec-500/10 ring-(1 inset white/10) opacity-100)">
                       <svg xmlns="http://www.w3.org/2000/svg" width="280" height="100" role="img" class="w-28 h-auto fill-current">
                         <use href="/_assets/logos.svg?bust={% bust %}#logo-{{ item | slugify }}" />
                       </svg>
@@ -93,6 +94,20 @@ date: 0001-01-01
                 {%- endfor %}
               </ul>
             </div>
+          {%- endif %}
+          {%- if goblin.data.gear %}
+            {%- for category, items in goblin.data.gear %}
+              <h3>{{ category }}</h3>
+              <div class="not-prose">
+                <ul class="my-2 grid-(& cols-3) gap-6">
+                  {%- for item in items %}
+                    <li>
+                      <a href="{{ item.url | url }}" x-tooltip="'{{ item.title }}'" class="block scale-95 transition hover:scale-100"><img src="/_assets/img/gear/{{ titleSlug }}/{{ category | slugify }}-{{ item.title | slugify }}.png" alt="{{ item.title }}" /></a>
+                    </li>
+                  {%- endfor %}
+                </ul>
+              </div>
+            {%- endfor %}
           {%- endif %}
           <span class="text-sec-300 block absolute -top-2.5 right-1/2 translate-x-1/2 animate-ping md:(-right-2.5 translate-x-0)" aria-hidden="true"><iconify-icon icon="mdi:sparkles" width="24px" height="24px" class="iconify" noobserver></iconify-icon></span>
         </figcaption>
