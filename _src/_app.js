@@ -77,7 +77,7 @@ install({
       }),
       keyframes: {
         'header': {
-          'to': { 'background-position': '-200% center' },
+          // 'to': { 'background-position': '-200% center' },
           '0%': { 'transform': 'translateY(-6px)' },
           '50%': { 'transform': 'translateY(6px)' },
           '100%': { 'transform': 'translateY(-6px)' },

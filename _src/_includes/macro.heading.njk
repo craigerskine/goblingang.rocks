@@ -2,7 +2,7 @@
   {%- set tag -%}{{ param.tag if param.tag else 'h1' }}{%- endset -%}
   <{{ tag }} class="
     bg-[length:200%_auto]
-    bg-(clip-text [linear-gradient(to_right,theme(colors.pri.300),theme(colors.pri.500),theme(colors.lime.500),theme(colors.pri.300))])
+    bg-(clip-text [linear-gradient(to_bottom,theme(colors.pri.200),theme(colors.pri.500),theme(colors.lime.500),theme(colors.pri.200))])
     text-(transparent 5xl center)
     font-goblin
     md:(text-[8rem] tracking-tight)
