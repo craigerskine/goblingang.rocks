@@ -146,23 +146,32 @@ injectGlobal`
 
     .tabs {
       @apply flex flex-wrap;
+      --border: 1px;
+      --depth: 1;
+      --noise: 0;
       --tabs-height: auto;
       --tabs-direction: row;
-      --tab-height: calc(var(--size-field, 0.25rem) * 10);
+      --tab-height: calc(0.25rem * 10);
       height: var(--tabs-height);
       flex-direction: var(--tabs-direction);
     }
 
     .tab {
-      @apply text-current hover:text-white relative inline-flex cursor-pointer appearance-none flex-wrap items-center justify-center text-center select-none;
+      @apply [--tab-bg:color-mix(in_oklab,theme(colors.pri.500),transparent_85%)] [--color-neutral:theme(colors.black)] text-current hover:text-white relative inline-flex cursor-pointer appearance-none flex-wrap items-center justify-center text-center select-none;
       --tab-p: 0.75rem;
-      --tab-bg: color-mix(in oklab, currentColor, #0000 90%);
-      --tab-border-color: color-mix(in oklab, currentColor, #0000 90%);
+      --tab-border-color: black;
       --tab-radius-ss: 0;
       --tab-radius-se: 0;
       --tab-radius-es: 0;
       --tab-radius-ee: 0;
       --tab-order: 0;
+      --tab-radius-min: calc(0.75rem - var(--border));
+      --tab-radius-limit: min(0.25rem, var(--tab-radius-min));
+      --tab-radius-grad:
+        #0000 calc(69% - var(--border)),
+        var(--tab-border-color) calc(69% - var(--border) + 0.25px),
+        var(--tab-border-color) 69%,
+        var(--tab-bg) calc(69% + 0.25px);
       border-color: #0000;
       order: var(--tab-order);
       height: var(--tab-height);
@@ -239,32 +248,47 @@ injectGlobal`
       border-end-end-radius: var(--tabcontent-radius-ee);
     }
 
-    .tabs-border {
-      & > .tab-content { @apply border-t [border-color:color-mix(in_oklab,currentColor,#0000_75%)] pt-6; }
+    .tabs-box {
+      @apply p-2;
+      --tabs-box-radius: calc(3 * 0.25rem);
+      border-radius: calc(min(var(--tab-height) / 2, 0.25rem) + min(0.25rem, var(--tabs-box-radius)));
+      box-shadow:
+        0 -0.5px oklch(100% 0 0 / calc(var(--depth) * 0.1)) inset,
+        0 0.5px oklch(0% 0 0 / calc(var(--depth) * 0.05)) inset;
+
       & > .tab {
-        --tab-border-color: #0000 #0000 var(--tab-border-color) #0000;
-        position: relative;
-        &:before {
-          content: "";
-          background-color: var(--tab-border-color);
-          transition: background-color 0.2s ease;
-          width: 100%;
-          height: 3px;
-          bottom: 0;
-          left: 0;
-          position: absolute;
+        @apply rounded;
+        border-style: none;
+
+        &:focus-visible,
+        &:is(label:has(:checked:focus-visible)) {
+          outline-offset: 2px;
         }
-        &:is(.tab-active, [aria-selected="true"], [aria-current="true"], [aria-current="page"]):not(
-            .tab-disabled,
-            [disabled]
-          ),
-        &:is(input:checked),
-        &:is(label:has(:checked)) {
-          &:before {
-            --tab-border-color: currentColor;
-            border-top: 3px solid;
-          }
+        &:focus-visible {
+          @apply z-1;
         }
+      }
+
+      & > :is(.tab-active, [aria-selected="true"], [aria-current="true"], [aria-current="page"]):not(.tab-disabled,[disabled]),
+      & > :is(input:checked),
+      & > :is(label:has(:checked)) {
+        background-color: var(--tab-bg);
+        box-shadow:
+          0 1px oklch(100% 0 0 / calc(var(--depth) * 0.1)) inset,
+          0 1px 1px -1px color-mix(in oklab, var(--color-neutral) calc(var(--depth) * 50%), #0000),
+          0 1px 6px -4px color-mix(in oklab, var(--color-neutral) calc(var(--depth) * 100%), #0000);
+        @media (forced-colors: active) {
+          border: 1px solid;
+        }
+      }
+      & > .tab-content {
+        @apply mt-1;
+        /* Compensate for p-1 */
+        height: calc(100% - var(--tab-height) + var(--border) - 0.5rem);
+        border-radius: calc(
+          min(var(--tab-height) / 2, 0.25rem) +
+            min(0.25rem, var(--tabs-box-radius)) - var(--border)
+        );
       }
     }
 

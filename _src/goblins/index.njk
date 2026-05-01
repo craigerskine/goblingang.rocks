@@ -80,14 +80,14 @@ date: 0001-01-01
         <figcaption class="prose max-w-sm grow [&>p]:text-wrap-pretty md:(max-w-none text-lg)">
           {{ goblin.data.desc | md | safe if goblin.data.desc }}
           {%- if goblin.data.gear %}
-            <div class="prose tabs tabs-border mt-8 mx-auto max-w-sm md:max-w-none">
+            <div class="prose tabs tabs-box mt-8 mx-auto max-w-sm md:max-w-none">
               {%- for category, items in goblin.data.gear %}
                 <label class="tab text-base" id="tab-{{ category | slugify }}">
                   <input type="radio" name="gear" role="tab"{{ ' checked' if loop.first }} />
                   {{ category }}
                 </label>
-                <div class="not-prose tab-content" role="tabpanel" aria-labelledby="tab-{{ category | slugify }}">
-                  <ul class="my-2 grid-(& cols-3) gap-4 md:gap-8">
+                <div class="tab-content not-prose border-(1 black/75) bg-pri-500/5" role="tabpanel" aria-labelledby="tab-{{ category | slugify }}">
+                  <ul class="p-4 grid-(& cols-3) gap-4 md:gap-8">
                     {%- for item in items %}
                       {%- if category === 'Brands' %}
                         <li>

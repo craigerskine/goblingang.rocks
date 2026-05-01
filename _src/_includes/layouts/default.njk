@@ -1,4 +1,5 @@
 {%- from 'macro.heading.njk' import heading -%}
+{%- set domain -%}{{ site.meta.url | replace('.rocks/', '.rocks') }}{%- endset -%}
 {%- set pageTitle -%}{{ title +' :: '+ site.meta.title if title else site.meta.title }}{%- endset -%}
 {%- set headingTitle -%}{{ title if title else site.meta.title }}{%- endset -%}
 {%- set headingSubtitle -%}{{ subtitle if subtitle else site.meta.description }}{%- endset -%}
@@ -18,11 +19,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link onload="this.onload=null;this.rel='stylesheet'" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" />
+
+    <meta name="title" content="{{ pageTitle }}" />
+    <meta name="description" content="{{ site.meta.description }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ domain }}{{ page.url | url }}" />
     <meta property="og:title" content="{{ pageTitle }}" />
     <meta property="og:description" content="{{ site.meta.description }}" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="{{ page.url | url }}" />
-    <meta property="og:image" content="{{ '/' | url }}_assets/img/og.png" />
+    <meta property="og:image" content="{{ domain }}{{ '/' | url }}_assets/img/og.png" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="{{ domain }}{{ page.url | url }}" />
+    <meta property="twitter:title" content="{{ pageTitle }}" />
+    <meta property="twitter:description" content="{{ site.meta.description }}" />
+    <meta property="twitter:image" content="{{ domain }}{{ '/' | url }}_assets/img/og.png" />
+
     {% renderblock 'css' %}
   </head>
 
