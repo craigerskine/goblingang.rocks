@@ -249,7 +249,7 @@ injectGlobal`
     }
 
     .tabs-box {
-      @apply p-2;
+      @apply pb-px;
       --tabs-box-radius: calc(3 * 0.25rem);
       border-radius: calc(min(var(--tab-height) / 2, 0.25rem) + min(0.25rem, var(--tabs-box-radius)));
       box-shadow:
