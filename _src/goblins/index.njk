@@ -83,7 +83,7 @@ date: 0001-01-01
             <div class="prose tabs tabs-box mt-8 mx-auto max-w-sm md:max-w-none">
               {%- for category, items in goblin.data.gear %}
                 <label class="tab text-base" id="tab-{{ category | slugify }}">
-                  <input type="radio" name="gear" role="tab"{{ ' checked' if loop.first }} />
+                  <input type="radio" name="gear-{{ titleSlug }}" role="tab"{{ ' checked' if loop.first }} />
                   {{ category }}
                 </label>
                 <div class="tab-content not-prose border-(1 black/75) bg-pri-500/5" role="tabpanel" aria-labelledby="tab-{{ category | slugify }}">
