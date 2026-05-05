@@ -91,7 +91,6 @@ install({
   // custom rules
   rules: [
     ['text-wrap-(unset|wrap|nowrap|balance|pretty)', 'textWrap'],
-    ['bg-noise', {'background-image': 'url(/_assets/img/bg-cracked.png), url(/_assets/img/bg-chalk.png), url("data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 4 4\' width=\'4\' height=\'4\'><rect x=\'0\' y=\'0\' width=\'2\' height=\'2\' fill=\'rgba(255,255,255,.02)\'></rect></svg>")'}],
     ['container-', ({ $$ }) => `mx-auto w-full max-w-${$$}`],
   ],
 });

@@ -27,7 +27,7 @@ layout: layouts/default.njk
       after:backdrop-blur
       after:transition-all
     ">
-      <a href="/goblins/#{{ goblin.data.title | slugify }}" class="absolute inset-0 text-white z-10">
+      <a href="{{ '/' | url }}goblins/#{{ goblin.data.title | slugify }}" class="absolute inset-0 text-white z-10">
         <span class="
           py-2.5
           px-5
@@ -56,7 +56,7 @@ layout: layouts/default.njk
           {{ goblin.data.title }}
         </span>
       </a>
-      <img class="w-full h-full object-cover object-top" src="/_assets/img/goblin-{{ goblin.data.title | slugify }}.jpg" width="640" height="960" alt="{{ goblin.data.title }} photo" />
+      <img class="w-full h-full object-cover object-top" src="{{ '/' | url }}_assets/img/goblin-{{ goblin.data.title | slugify }}.jpg" width="640" height="960" alt="{{ goblin.data.title }} photo" />
     </li>
   {%- endfor %}
 </ul>

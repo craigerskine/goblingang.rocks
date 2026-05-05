@@ -1,6 +1,6 @@
 {%- macro btn(param) -%}
   {%- set tag -%}{% if param.url %}a{% else %}button{% endif %}{%- endset -%}
-  <{{ tag }}{% if param.url %} href="{{ param.url }}"{% endif %} class="btn {{ 'p-2.5' if param.ico else 'px-6 py-2.5' }}"{{ param.props | safe -}}>
+  <{{ tag }}{% if param.url %} href="{{ param.url | url }}"{% endif %} class="btn {{ 'p-2.5' if param.ico else 'px-6 py-2.5' }}"{{ param.props | safe -}}>
     {%- if param.ico %}
       <iconify-icon icon="{{ param.ico }}" width="24px" height="24px" class="iconify" aria-label="{{ param.title }}" noobserver></iconify-icon>
     {%- else %}

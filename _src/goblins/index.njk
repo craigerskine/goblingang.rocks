@@ -61,7 +61,7 @@ date: 0001-01-01
             id="tab-{{ titleSlug }}"
             role="tab"
           >
-            <img class="w-11 h-11 block object-cover object-top rounded-full" src="/_assets/img/goblin-{{ titleSlug }}-th.jpg" width="44" height="44" alt="{{ goblin.data.title }} photo" />
+            <img class="w-11 h-11 block object-cover object-top rounded-full" src="{{ '/' | url }}_assets/img/goblin-{{ titleSlug }}-th.jpg" width="44" height="44" alt="{{ goblin.data.title }} photo" />
           </button>
         </li>
       {%- endfor %}
@@ -76,7 +76,7 @@ date: 0001-01-01
         subtitle: goblin.data.position
       }) }}
       <figure class="mt-12 flex-(& col) items-center gap-8 relative md:(flex-row-reverse items-start gap-16)">
-        <img src="/_assets/img/goblin-{{ titleSlug }}.jpg" alt="{{ goblin.data.title }} photo" class="p-px border-(& black) w-full max-w-xs bg-gradient-to-br from-sec-200 to-sec-700 shrink-0 rounded-xl shadow-2xl md:(sticky top-4)" />
+        <img src="{{ '/' | url }}_assets/img/goblin-{{ titleSlug }}.jpg" alt="{{ goblin.data.title }} photo" class="p-px border-(& black) w-full max-w-xs bg-gradient-to-br from-sec-200 to-sec-700 shrink-0 rounded-xl shadow-2xl md:(sticky top-4)" />
         <figcaption class="prose max-w-sm grow [&>p]:text-wrap-pretty md:(max-w-none text-lg)">
           {{ goblin.data.desc | md | safe if goblin.data.desc }}
           {%- if goblin.data.gear %}
@@ -93,14 +93,14 @@ date: 0001-01-01
                         <li>
                           <a href="{{ item.url | url }}" aria-label="{{ item.title }}" class="p-2 bg-zinc-500/20 flex items-center justify-center opacity-50 rounded-lg transition hover:(bg-sec-500/10 ring-(1 inset white/10) opacity-100) focus:(bg-sec-500/10 ring-(1 inset white/10) opacity-100)">
                             <svg xmlns="http://www.w3.org/2000/svg" width="280" height="100" role="img" class="w-28 h-auto fill-current">
-                              <use href="/_assets/logos.svg?bust={% bust %}#logo-{{ item.title | slugify }}" />
+                              <use href="{{ '/' | url }}_assets/logos.svg?bust={% bust %}#logo-{{ item.title | slugify }}" />
                             </svg>
                           </a>
                         </li>
                       {%- else %}  
                         {%- set parts = item.title.split(' › ') -%}
                         <li>
-                          <a href="{{ item.url | url }}" class="block transition hover:scale-105"><img src="/_assets/img/gear/{{ titleSlug }}/{{ category | slugify }}-{{ item.title | slugify }}.png" alt="{{ item.title }}" /></a>
+                          <a href="{{ item.url | url }}" class="block transition hover:scale-105"><img src="{{ '/' | url }}_assets/img/gear/{{ titleSlug }}/{{ category | slugify }}-{{ item.title | slugify }}.png" alt="{{ item.title }}" /></a>
                           <p class="mt-1 text-center flex flex-col items-center"><small class="text-xs opacity-60">{{ parts[0] }}</small> <strong class="text-sm">{{ parts[1] }}</strong></p>
                         </li>
                       {%- endif %}

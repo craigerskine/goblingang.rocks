@@ -21,7 +21,7 @@ date: 0002-01-01
       {#- <a @click.prevent="document.getElementById('{{ 'lp-'+ album.data.title | slugify }}').showModal()" href="#" class="shrink-0 focus-visible:(outline-none)"> #}
         <div class="shrink-0">
           <figure class="relative">
-            <img src="/_assets/img/album-{{ album.data.title | slugify }}.jpg" alt="{{ album.data.title }} cover" class="p-px w-full bg-gradient-to-br from-sec-200 via-sec-900/75 to-sec-900/75 shrink-0 rounded shadow-2xl" />
+            <img src="{{ '/' | url }}_assets/img/album-{{ album.data.title | slugify }}.jpg" alt="{{ album.data.title }} cover" class="p-px w-full bg-gradient-to-br from-sec-200 via-sec-900/75 to-sec-900/75 shrink-0 rounded shadow-2xl" />
             <figcaption class="p-2 text-lg grid grid-cols-[auto_auto] items-center justify-between gap-2">
               <i class="group-focus-visible:(outline-(& 2 offset-2) rounded)">{{ album.data.title }}</i>
               <small class="text-pri-700">{{ album.data.date | dateFormat('YYYY') }}</small>

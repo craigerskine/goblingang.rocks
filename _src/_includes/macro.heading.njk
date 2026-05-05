@@ -11,7 +11,7 @@
     <span class="[text-shadow:0_5px_25px_color-mix(in_oklab,theme(colors.sec.500),transparent_65%)]">
       <span class="flex items-center justify-center gap-3 md:gap-5">
         {%- if param.title === 'Goblin Gang' %}
-          Goblin <img src="/_assets/img/jewel.png" alt="jewel" class="w-6 h-auto md:w-auto" /> Gang
+          Goblin <img src="{{ '/' | url }}_assets/img/jewel.png" alt="jewel" class="w-6 h-auto md:w-auto" /> Gang
         {%- else %}
           {{ param.title }}
         {%- endif %}

@@ -3,6 +3,7 @@
 {%- set pageTitle -%}{{ title +' :: '+ site.meta.title if title else site.meta.title }}{%- endset -%}
 {%- set headingTitle -%}{{ title if title else site.meta.title }}{%- endset -%}
 {%- set headingSubtitle -%}{{ subtitle if subtitle else site.meta.description }}{%- endset -%}
+{%- set noise -%}.bg-noise{background-image:url({{ '/' | url }}_assets/img/bg-cracked.png), url({{ '/' | url }}_assets/img/bg-chalk.png), url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 4' width='4' height='4'><rect x='0' y='0' width='2' height='2' fill='rgba(255,255,255,.02)'></rect></svg>");}{%- endset -%}
 
 <!doctype html>
 <html lang="en" class="bg-transparent antialiased [&:has(:is(dialog[open]))]:(overflow-hidden [scrollbar-gutter:stable])" x-data>
@@ -33,6 +34,7 @@
     <meta property="twitter:description" content="{{ site.meta.description }}" />
     <meta property="twitter:image" content="{{ domain }}{{ '/' | url }}_assets/img/og.png" />
 
+    <style>{{ noise | safe }}</style>
     {% renderblock 'css' %}
   </head>
 
@@ -58,8 +60,8 @@
       <footer class="divider-middle mt-auto p-6 pt-12 w-full text-(zinc-400/75 xs center) italic shrink-0 flex-col after:(w-full) md:(w-auto text-sm flex-row)">
         <div class="shrink-0 flex-(& wrap) items-center justify-center gap-2 order-first md:gap-3">
           <span>&copy;{% year %} {{ site.meta.title }}</span>
-          <span aria-hidden="true"><img src="/_assets/img/jewel.png" alt="jewel" class="w-auto h-[24px]" /></span>
-          <span>Created by <a href="/goblins/qranog/" class="link">Qranog</a></span>
+          <span aria-hidden="true"><img src="{{ '/' | url }}_assets/img/jewel.png" alt="jewel" class="w-auto h-[24px]" /></span>
+          <span>Created by <a href="{{ '/' | url }}goblins/qranog/" class="link">Qranog</a></span>
         </div>
         <div class="shrink-0 order-last">
           {%- include 'inc.info.njk' -%}
