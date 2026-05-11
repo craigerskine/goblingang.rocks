@@ -156,7 +156,7 @@ injectGlobal`
     }
 
     .tab {
-      @apply [--tab-bg:color-mix(in_oklab,theme(colors.pri.500),transparent_85%)] [--color-neutral:theme(colors.black)] text-current hover:text-white relative inline-flex cursor-pointer appearance-none flex-wrap items-center justify-center text-center select-none;
+      @apply [--tab-bg:color-mix(in_oklab,theme(colors.pri.500),transparent_90%)] [--color-neutral:theme(colors.black)] text-current hover:text-white relative inline-flex cursor-pointer appearance-none flex-wrap items-center justify-center text-center select-none;
       --tab-p: 0.75rem;
       --tab-border-color: black;
       --tab-radius-ss: 0;
@@ -247,47 +247,88 @@ injectGlobal`
       border-end-end-radius: var(--tabcontent-radius-ee);
     }
 
-    .tabs-box {
-      @apply pb-px;
-      --tabs-box-radius: calc(3 * 0.25rem);
-      border-radius: calc(min(var(--tab-height) / 2, 0.25rem) + min(0.25rem, var(--tabs-box-radius)));
-      box-shadow:
-        0 -0.5px oklch(100% 0 0 / calc(var(--depth) * 0.1)) inset,
-        0 0.5px oklch(0% 0 0 / calc(var(--depth) * 0.05)) inset;
-
+    .tabs-lift {
+      --tabs-height: auto;
+      --tabs-direction: row;
       & > .tab {
-        @apply rounded;
-        border-style: none;
-
-        &:focus-visible,
-        &:is(label:has(:checked:focus-visible)) {
-          outline-offset: 2px;
-        }
-        &:focus-visible {
-          @apply z-1;
+        --tab-border: 0 0 var(--border) 0;
+        --tab-radius-ss: var(--tab-radius-limit);
+        --tab-radius-se: var(--tab-radius-limit);
+        --tab-radius-es: 0;
+        --tab-radius-ee: 0;
+        --tab-paddings: var(--border) var(--tab-p) 0 var(--tab-p);
+        --tab-border-colors: #0000 #0000 var(--tab-border-color) #0000;
+        --tab-corner-width: calc(100% + var(--tab-radius-limit) * 2);
+        --tab-corner-height: var(--tab-radius-limit);
+        --tab-corner-position: top left, top right;
+        border-width: var(--tab-border);
+        border-start-start-radius: var(--tab-radius-ss);
+        border-start-end-radius: var(--tab-radius-se);
+        border-end-start-radius: var(--tab-radius-es);
+        border-end-end-radius: var(--tab-radius-ee);
+        padding: var(--tab-paddings);
+        border-color: var(--tab-border-colors);
+        &:is(.tab-active, [aria-selected="true"],
+        [aria-current="true"],
+        [aria-current="page"]):not(.tab-disabled,[disabled]),
+        &:is(input:checked, label:has(:checked)) {
+          --tab-border: var(--border) var(--border) 0 var(--border);
+          --tab-border-colors: var(--tab-border-color) var(--tab-border-color) #0000
+            var(--tab-border-color);
+          --tab-paddings: 0 calc(var(--tab-p) - var(--border)) var(--border)
+            calc(var(--tab-p) - var(--border));
+          --tab-inset: auto auto 0 auto;
+          --radius-start: radial-gradient(circle at top left, var(--tab-radius-grad));
+          --radius-end: radial-gradient(circle at top right, var(--tab-radius-grad));
+          background-color: var(--tab-bg);
+          &:before {
+            z-index: 1;
+            content: "";
+            display: block;
+            position: absolute;
+            width: var(--tab-corner-width);
+            height: var(--tab-corner-height);
+            background-position: var(--tab-corner-position);
+            background-image: var(--radius-start), var(--radius-end);
+            background-size: var(--tab-radius-limit) var(--tab-radius-limit);
+            background-repeat: no-repeat;
+            inset: var(--tab-inset);
+          }
+          &:first-child:before {
+            --radius-start: none;
+          }
+          &:last-child:before {
+            --radius-end: none;
+          }
         }
       }
 
-      & > :is(.tab-active, [aria-selected="true"], [aria-current="true"], [aria-current="page"]):not(.tab-disabled,[disabled]),
-      & > :is(input:checked),
-      & > :is(label:has(:checked)) {
-        background-color: var(--tab-bg);
-        box-shadow:
-          0 1px oklch(100% 0 0 / calc(var(--depth) * 0.1)) inset,
-          0 1px 1px -1px color-mix(in oklab, var(--color-neutral) calc(var(--depth) * 50%), #0000),
-          0 1px 6px -4px color-mix(in oklab, var(--color-neutral) calc(var(--depth) * 100%), #0000);
-        @media (forced-colors: active) {
-          border: 1px solid;
+      &:has(> .tab-content) {
+        > .tab:first-child {
+          &:not(.tab-active, [aria-selected="true"], [aria-current="true"], [aria-current="page"]) {
+            --tab-border-colors: var(--tab-border-color) var(--tab-border-color) #0000
+              var(--tab-border-color);
+          }
         }
       }
-      & > .tab-content {
-        @apply mt-1;
-        /* Compensate for p-1 */
-        height: calc(100% - var(--tab-height) + var(--border) - 0.5rem);
-        border-radius: calc(
-          min(var(--tab-height) / 2, 0.25rem) +
-            min(0.25rem, var(--tabs-box-radius)) - var(--border)
-        );
+
+      > .tab-content {
+        --tabcontent-margin: calc(-1 * var(--border)) 0 0 0;
+        --tabcontent-radius-ss: 0;
+        --tabcontent-radius-se: var(--radius-box);
+        --tabcontent-radius-es: var(--radius-box);
+        --tabcontent-radius-ee: var(--radius-box);
+      }
+
+      :checked,
+      label:has(:checked),
+      :is(.tab-active,[aria-selected="true"],[aria-current="true"],[aria-current="page"]) {
+        & + .tab-content {
+          &:nth-child(1),
+          &:nth-child(n + 3) {
+            --tabcontent-radius-ss: var(--radius-box);
+          }
+        }
       }
     }
 

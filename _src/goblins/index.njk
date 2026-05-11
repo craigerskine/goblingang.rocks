@@ -80,13 +80,13 @@ date: 0001-01-01
         <figcaption class="prose max-w-sm grow [&>p]:text-wrap-pretty md:(max-w-none text-lg)">
           {{ goblin.data.desc | md | safe if goblin.data.desc }}
           {%- if goblin.data.gear %}
-            <div class="prose tabs tabs-box mt-8 mx-auto max-w-sm md:max-w-none">
+            <div class="prose tabs tabs-lift mt-8 mx-auto max-w-sm md:max-w-none">
               {%- for category, items in goblin.data.gear %}
                 <label class="tab text-xs md:text-base" id="tab-{{ category | slugify }}">
                   <input type="radio" name="gear-{{ titleSlug }}" role="tab"{{ ' checked' if loop.first }} />
                   {{ category }}
                 </label>
-                <div class="tab-content not-prose border-(1 black/75) bg-pri-500/5" role="tabpanel" aria-labelledby="tab-{{ category | slugify }}">
+                <div class="tab-content not-prose border-(l-1 r-1 b-1 black) bg-pri-500/10" role="tabpanel" aria-labelledby="tab-{{ category | slugify }}">
                   <ul class="p-4 grid-(& cols-3) gap-4 md:gap-8">
                     {%- for item in items %}
                       {%- if category === 'Brands' %}
@@ -108,6 +108,7 @@ date: 0001-01-01
                   </ul>
                 </div>
               {%- endfor %}
+              <b class="tab"></b>
             </div>
           {%- endif %}
           {#- <span class="text-sec-300 block absolute -top-2.5 right-1/2 translate-x-1/2 animate-ping md:(-right-2.5 translate-x-0)" aria-hidden="true"><iconify-icon icon="mdi:sparkles" width="24px" height="24px" class="iconify" noobserver></iconify-icon></span> -#}
