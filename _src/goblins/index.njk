@@ -87,7 +87,7 @@ date: 0001-01-01
                   {{ category }}
                 </label>
                 <div class="tab-content not-prose border-(l-1 r-1 b-1 black) bg-pri-500/10" role="tabpanel" aria-labelledby="tab-{{ goblin.data.title | slugify }}-{{ category | slugify }}">
-                  <ul class="p-4 grid-(& cols-3) gap-4 md:gap-8">
+                  <ul class="p-4 grid-(& cols-3) gap-4 md:p-8 md:gap-8">
                     {%- for item in items %}
                       {%- if category === 'Brands' %}
                         <li>
