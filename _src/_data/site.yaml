@@ -18,8 +18,3 @@ info:
   - title: 'Source: GitHub'
     ico: simple-icons:github
     url: https://github.com/craigerskine/goblingang.rocks/
-
-analytics: |-
-  // google analytics
-  // window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-  // ga('create', 'UA-XXXXXXX-X', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
