@@ -42,6 +42,8 @@ gear:
       url: https://polychromedsp.com/lumos/
     - title: PolyChrome › Graphene
       url: https://polychromedsp.com/graphene/
+    - title: PolyChrome › Iroko
+      url: https://polychromedsp.com/iroko/
     - title: Archetype › Petrucci
       url: https://neuraldsp.com/plugins/archetype-petrucci
     - title: Archetype › Tim Henson
