@@ -18,8 +18,8 @@ gear:
       url: https://kieselguitars.com/series/guitar/vader
     - title: Kiesel › Zeus
       url: https://kieselguitars.com/series/guitar/z2
-    - title: Kiesel › Kyber Headless
-      url: https://kieselguitars.com/series/guitar/kyber-headless
+    # - title: Kiesel › Kyber Headless
+    #   url: https://kieselguitars.com/series/guitar/kyber-headless
     - title: .strandberg* › Boden N2.6
       url: https://strandbergguitars.com/en-US/guitars/series/original-n2
     - title: .strandberg* › Boden Metal
